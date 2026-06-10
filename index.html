@@ -168,13 +168,21 @@
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
   .hamburger span { width: 24px; height: 2px; background: var(--gray-800); border-radius: 2px; }
 
-  @media (max-width: 768px) {
+   @media (max-width: 768px) {
     .nav-links, .nav-lang { display: none; }
     .hamburger { display: flex; }
-    .hero-stats { gap: 24px; flex-wrap: wrap; }
+    .hero { min-height: auto; padding: 90px 6% 50px; }
+    .hero h1 { font-size: 34px; letter-spacing: -1px; }
+    .hero p { font-size: 15px; margin-bottom: 26px; }
+    .hero-badge { font-size: 12px; margin-bottom: 20px; }
+    .hero-buttons { flex-direction: column; }
+    .hero-buttons a { width: 100%; text-align: center; }
+    .hero-stats { gap: 20px; flex-wrap: wrap; margin-top: 36px; padding-top: 28px; }
+    .hero-stat-num { font-size: 24px; }
     .kontakt-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; gap: 28px; }
     .form-row { grid-template-columns: 1fr; }
+    section { padding: 56px 6%; }
   }
 
   .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
