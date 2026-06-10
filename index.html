@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SeKO e.V. – Somalische Europäische Kooperation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue:       #1a4f9c;
+    --blue-dark:  #0d2f5e;
+    --blue-light: #e8f0fb;
+    --blue-mid:   #2d6cc0;
+    --white:      #ffffff;
+    --gray-50:    #f8fafc;
+    --gray-100:   #f1f5f9;
+    --gray-400:   #94a3b8;
+    --gray-600:   #475569;
+    --gray-800:   #1e293b;
+    --accent:     #f59e0b;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--gray-800);
+    background: var(--white);
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(26,79,156,0.1);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; color: white; font-size: 18px;
+    letter-spacing: -1px;
+  }
+
+  .nav-logo-text {
+    font-weight: 700; font-size: 15px; color: var(--blue-dark);
+    line-height: 1.2;
+  }
+
+  .nav-logo-text span {
+    display: block; font-weight: 400; font-size: 11px;
+    color: var(--gray-400); letter-spacing: 0.5px;
+  }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none; font-size: 14px; font-weight: 500;
+    color: var(--gray-600);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--blue); }
+
+  .nav-lang {
+    display: flex; gap: 6px;
+  }
+
+  .lang-btn {
+    padding: 4px 10px; border-radius: 20px; border: 1px solid #dde3f0;
+    background: none; font-size: 12px; font-weight: 500;
+    color: var(--gray-600); cursor: pointer; transition: all 0.2s;
+  }
+
+  .lang-btn.active, .lang-btn:hover {
+    background: var(--blue); color: white; border-color: var(--blue);
+  }
+
+  .nav-cta {
+    background: var(--blue); color: white !important;
+    padding: 10px 20px; border-radius: 8px; font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--blue-dark) !important; color: white !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--blue-mid) 100%);
+    display: flex; align-items: center;
+    padding: 100px 5% 60px;
+    position: relative; overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-content {
+    max-width: 640px; position: relative; z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 30px; padding: 6px 16px;
+    font-size: 13px; color: rgba(255,255,255,0.9);
+    margin-bottom: 28px;
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-badge::before {
+    content: ''; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); flex-shrink: 0;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 6vw, 68px);
+    font-weight: 900; line-height: 1.05;
+    color: white; margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    background: linear-gradient(90deg, var(--accent), #fcd34d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero p {
+    font-size: 18px; color: rgba(255,255,255,0.8);
+    max-width: 480px; margin-bottom: 40px; line-height: 1.7;
+  }
+
+  .hero-buttons {
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: white; color: var(--blue);
+    padding: 14px 28px; border-radius: 10px;
+    font-weight: 700; font-size: 15px;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    color: white; padding: 14px 28px; border-radius: 10px;
+    font-weight: 600; font-size: 15px;
+    text-decoration: none; cursor: pointer;
+    transition: all 0.2s; backdrop-filter: blur(8px);
+  }
+
+  .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+
+  .hero-stats {
+    display: flex; gap: 40px; margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 900; color: white;
+  }
+
+  .hero-stat-label {
+    font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 2px;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 90px 5%; }
+
+  .section-label {
+    font-size: 12px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--blue);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700; line-height: 1.2;
+    color: var(--gray-800); margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 17px; color: var(--gray-600);
+    max-width: 560px; line-height: 1.7;
+  }
+
+  /* ── ANGEBOTE ── */
+  #angebote { background: var(--gray-50); }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px; margin-top: 48px;
+  }
+
+  .card {
+    background: white; border-radius: 16px;
+    padding: 32px; border: 1px solid #e8edf5;
+    transition: all 0.25s;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(26,79,156,0.1);
+    border-color: var(--blue-light);
+  }
+
+  .card-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: var(--blue-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 20px;
+  }
+
+  .card h3 {
+    font-size: 18px; font-weight: 700;
+    color: var(--gray-800); margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 14px; color: var(--gray-600); line-height: 1.65;
+  }
+
+  /* ── MITMACHEN ── */
+  #mitmachen {
+    background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+    color: white;
+  }
+
+  #mitmachen .section-label { color: var(--accent); }
+  #mitmachen .section-title { color: white; }
+  #mitmachen .section-sub { color: rgba(255,255,255,0.75); }
+
+  .mitmachen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px; margin-top: 48px;
+  }
+
+  .mitmachen-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px; padding: 28px;
+    backdrop-filter: blur(8px);
+    transition: all 0.25s;
+  }
+
+  .mitmachen-card:hover {
+    background: rgba(255,255,255,0.14);
+    transform: translateY(-3px);
+  }
+
+  .mitmachen-card h3 {
+    font-size: 17px; font-weight: 700; color: white; margin-bottom: 10px;
+  }
+
+  .mitmachen-card p {
+    font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .mitmachen-card a {
+    font-size: 13px; font-weight: 600; color: var(--accent);
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+
+  .mitmachen-card a:hover { text-decoration: underline; }
+
+  /* ── PROJEKTE ── */
+  .projekte-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px; margin-top: 48px;
+  }
+
+  .projekt-card {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid #e8edf5;
+    transition: all 0.25s;
+  }
+
+  .projekt-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(26,79,156,0.1);
+  }
+
+  .projekt-card-header {
+    height: 140px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 48px;
+  }
+
+  .projekt-card-body { padding: 24px; }
+
+  .projekt-card-body h3 {
+    font-size: 17px; font-weight: 700; margin-bottom: 8px;
+  }
+
+  .projekt-card-body p {
+    font-size: 14px; color: var(--gray-600); line-height: 1.6;
+  }
+
+  .tag {
+    display: inline-block; padding: 3px 10px; border-radius: 20px;
+    font-size: 11px; font-weight: 600; margin-bottom: 10px;
+  }
+
+  /* ── KONTAKT ── */
+  #kontakt { background: var(--gray-50); }
+
+  .kontakt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px; margin-top: 48px;
+    align-items: start;
+  }
+
+  .kontakt-info h3 {
+    font-size: 20px; font-weight: 700; margin-bottom: 24px;
+  }
+
+  .kontakt-item {
+    display: flex; gap: 16px; margin-bottom: 20px;
+    align-items: flex-start;
+  }
+
+  .kontakt-item-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--blue-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+
+  .kontakt-item-text { font-size: 14px; color: var(--gray-600); line-height: 1.5; }
+  .kontakt-item-text strong { color: var(--gray-800); display: block; margin-bottom: 2px; }
+
+  .kontakt-form { background: white; border-radius: 16px; padding: 32px; border: 1px solid #e8edf5; }
+
+  .form-group { margin-bottom: 18px; }
+
+  .form-group label {
+    display: block; font-size: 13px; font-weight: 600;
+    color: var(--gray-800); margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%; padding: 11px 14px; border-radius: 8px;
+    border: 1.5px solid #dde3f0; font-size: 14px;
+    font-family: 'Inter', sans-serif; color: var(--gray-800);
+    transition: border-color 0.2s; outline: none;
+    background: white;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--blue); }
+
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .btn-form {
+    width: 100%; padding: 13px; border-radius: 10px;
+    background: var(--blue); color: white;
+    border: none; font-size: 15px; font-weight: 700;
+    cursor: pointer; transition: background 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .btn-form:hover { background: var(--blue-dark); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--gray-800); color: rgba(255,255,255,0.7);
+    padding: 48px 5% 28px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px; margin-bottom: 40px;
+  }
+
+  .footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 12px; }
+
+  .footer-col h4 {
+    font-size: 13px; font-weight: 700; color: white;
+    letter-spacing: 0.5px; margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .footer-col a {
+    display: block; font-size: 14px; color: rgba(255,255,255,0.6);
+    text-decoration: none; margin-bottom: 10px; transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: white; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px;
+  }
+
+  /* ── MOBILE ── */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+  .hamburger span { width: 24px; height: 2px; background: var(--gray-800); border-radius: 2px; }
+
+  @media (max-width: 768px) {
+    .nav-links, .nav-lang { display: none; }
+    .hamburger { display: flex; }
+    .hero-stats { gap: 24px; flex-wrap: wrap; }
+    .kontakt-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-cta { display: none; }
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-in { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">Se</div>
+    <div class="nav-logo-text">
+      SeKO e.V.
+      <span>Somalische Europäische Kooperation</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#angebote">Angebote</a></li>
+    <li><a href="#projekte">Projekte</a></li>
+    <li><a href="#mitmachen">Mitmachen</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#kontakt" class="nav-cta">Jetzt helfen →</a></li>
+  </ul>
+  <div class="nav-lang">
+    <button class="lang-btn active" onclick="setLang('de')">DE</button>
+    <button class="lang-btn" onclick="setLang('so')">SO</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ar')">AR</button>
+  </div>
+  <button class="hamburger" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge" data-de="Gemeinnütziger Verein · Worms" data-so="Ururka Aan Faa'iido Doonin · Worms" data-en="Non-profit Organisation · Worms" data-ar="منظمة غير ربحية · ووَرمس">
+      Gemeinnütziger Verein · Worms
+    </div>
+    <h1 data-de="Gemeinsam <em>stärker</em>. Gemeinsam <em>weiter</em>." data-so="Wadajir <em>xoog</em>. Wadajir <em>hore</em>." data-en="Together <em>stronger</em>. Together <em>further</em>." data-ar="معاً <em>أقوى</em>. معاً <em>أبعد</em>.">
+      Gemeinsam <em>stärker</em>. Gemeinsam <em>weiter</em>.
+    </h1>
+    <p data-de="SeKO e.V. setzt sich für Integration, Bildung und soziale Teilhabe ein — in Deutschland und international. Wir verbinden Menschen und schaffen Chancen." data-so="SeKO e.V. waxay u shaqaysaa dhexgalka, waxbarashada iyo ka qeybgalka bulsheed — Jarmalka iyo caalamka. Waxaan xidhinaa dadka oo abuurnaa fursado." data-en="SeKO e.V. works for integration, education and social participation — in Germany and internationally. We connect people and create opportunities." data-ar="يعمل SeKO e.V. من أجل الاندماج والتعليم والمشاركة الاجتماعية — في ألمانيا وعلى المستوى الدولي.">
+      SeKO e.V. setzt sich für Integration, Bildung und soziale Teilhabe ein — in Deutschland und international. Wir verbinden Menschen und schaffen Chancen.
+    </p>
+    <div class="hero-buttons">
+      <a href="#mitmachen" class="btn-primary" data-de="Jetzt unterstützen →" data-so="Hadda gaawo →" data-en="Support us now →" data-ar="ادعمنا الآن →">Jetzt unterstützen →</a>
+      <a href="#angebote" class="btn-secondary" data-de="Unsere Angebote" data-so="Adeegyadayada" data-en="Our Services" data-ar="خدماتنا">Unsere Angebote</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">2020</div>
+        <div class="hero-stat-label" data-de="Gegründet" data-so="La aasaasay" data-en="Founded" data-ar="تأسست">Gegründet</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">500+</div>
+        <div class="hero-stat-label" data-de="Menschen unterstützt" data-so="Qof la caawiyay" data-en="People supported" data-ar="شخص مدعوم">Menschen unterstützt</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">4</div>
+        <div class="hero-stat-label" data-de="Länder aktiv" data-so="Dal firfircoon" data-en="Active countries" data-ar="دول نشطة">Länder aktiv</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANGEBOTE -->
+<section id="angebote">
+  <div class="fade-in">
+    <div class="section-label" data-de="Was wir tun" data-so="Waxa aan qabanno" data-en="What we do" data-ar="ما نفعله">Was wir tun</div>
+    <h2 class="section-title" data-de="Unsere Angebote" data-so="Adeegyadayada" data-en="Our Services" data-ar="خدماتنا">Unsere Angebote</h2>
+    <p class="section-sub" data-de="Vom Beratungscafé bis zur internationalen Hilfe — wir sind für Menschen da, die Unterstützung brauchen." data-so="Ka bilaabma xarunta la-talinta ilaa gargaarka caalamiga ah — waxaan u joognaa dadka u baahan gargaarka." data-en="From the counselling café to international aid — we are here for people who need support." data-ar="من مقهى الاستشارة إلى المساعدة الدولية — نحن هنا للأشخاص الذين يحتاجون إلى الدعم.">
+      Vom Beratungscafé bis zur internationalen Hilfe — wir sind für Menschen da, die Unterstützung brauchen.
+    </p>
+  </div>
+  <div class="cards-grid">
+    <div class="card fade-in">
+      <div class="card-icon">🤝</div>
+      <h3 data-de="Beratung & Unterstützung" data-so="La-talin & Taageero" data-en="Counselling & Support" data-ar="الإرشاد والدعم">Beratung & Unterstützung</h3>
+      <p data-de="Orientierung bei Behörden, Wohnungs- und Arbeitssuche, Gesundheit und Soziales. Wir begleiten Sie auf dem Weg." data-so="Hogaaminaada xafiisyada, raadinta guri iyo shaqo, caafimaad iyo arrimaha bulsheed." data-en="Navigation of authorities, housing and job search, health and social affairs. We guide you along the way." data-ar="التوجيه في الدوائر الحكومية والبحث عن السكن والعمل والصحة والشؤون الاجتماعية.">
+        Orientierung bei Behörden, Wohnungs- und Arbeitssuche, Gesundheit und Soziales. Wir begleiten Sie auf dem Weg.
+      </p>
+    </div>
+    <div class="card fade-in">
+      <div class="card-icon">📚</div>
+      <h3 data-de="Bildung & Nachhilfe" data-so="Waxbarasho & Taageero" data-en="Education & Tutoring" data-ar="التعليم والتدريس">Bildung & Nachhilfe</h3>
+      <p data-de="Nachhilfe für Kinder und Jugendliche, Kunst- und Malkurse, Workshops, Seminare und digitale Bildungsangebote." data-so="Taageero waxbarasho carruurta iyo dhalinyarada, koorsooyin farshaxan, tababarro." data-en="Tutoring for children and young people, art and painting courses, workshops, seminars and digital learning." data-ar="دروس تقوية للأطفال والشباب، ودورات الفن والرسم، وورش العمل والندوات.">
+        Nachhilfe für Kinder und Jugendliche, Kunst- und Malkurse, Workshops, Seminare und digitale Bildungsangebote.
+      </p>
+    </div>
+    <div class="card fade-in">
+      <div class="card-icon">☕</div>
+      <h3 data-de="Begegnungscafé" data-so="Xarunta Kulmitaanka" data-en="Meeting Café" data-ar="مقهى اللقاء">Begegnungscafé</h3>
+      <p data-de="Ein offener Ort für Begegnung, Austausch und Gemeinschaft. Frauen- und Familientreff, kulturelle Veranstaltungen." data-so="Meel furan oo kulmis, wadaag iyo bulsho. Shirarka dumarka iyo qoysaska, xafladaha dhaqameed." data-en="An open place for meeting, exchange and community. Women's and family gatherings, cultural events." data-ar="مكان مفتوح للقاء والتبادل والمجتمع. تجمعات نسائية وعائلية وفعاليات ثقافية.">
+        Ein offener Ort für Begegnung, Austausch und Gemeinschaft. Frauen- und Familientreff, kulturelle Veranstaltungen.
+      </p>
+    </div>
+    <div class="card fade-in">
+      <div class="card-icon">🌍</div>
+      <h3 data-de="Internationale Hilfe" data-so="Gargaarka Caalamiga" data-en="International Aid" data-ar="المساعدة الدولية">Internationale Hilfe</h3>
+      <p data-de="Humanitäre Hilfe für Somalia, Unterstützung von Familien in Krisengebieten und Förderung der Diaspora in Europa." data-so="Gargaar bini'aadantinimo ee Soomaaliya, taageero qoysaska degmooyinka colaadda leh." data-en="Humanitarian aid for Somalia, support for families in crisis areas and promotion of the diaspora in Europe." data-ar="المساعدة الإنسانية للصومال، ودعم الأسر في مناطق الأزمات وتعزيز الشتات في أوروبا.">
+        Humanitäre Hilfe für Somalia, Unterstützung von Familien in Krisengebieten und Förderung der Diaspora in Europa.
+      </p>
+    </div>
+    <div class="card fade-in">
+      <div class="card-icon">🏛️</div>
+      <h3 data-de="Integration & Demokratie" data-so="Dhexgalka & Dimuqraadiyada" data-en="Integration & Democracy" data-ar="الاندماج والديمقراطية">Integration & Demokratie</h3>
+      <p data-de="Themen wie Demokratie, Frauenrechte, Einbürgerung und gesellschaftliche Teilhabe — gemeinsam stark." data-so="Mawduucyada dimuqraadiyada, xuquuqda dumarka, dhalashada iyo ka qeybgalka bulsheed." data-en="Topics such as democracy, women's rights, naturalization and social participation — strong together." data-ar="موضوعات مثل الديمقراطية وحقوق المرأة والتجنيس والمشاركة الاجتماعية.">
+        Themen wie Demokratie, Frauenrechte, Einbürgerung und gesellschaftliche Teilhabe — gemeinsam stark.
+      </p>
+    </div>
+    <div class="card fade-in">
+      <div class="card-icon">🤲</div>
+      <h3 data-de="Behörden-Kooperation" data-so="Kaashiga Xafiisyada" data-en="Authority Cooperation" data-ar="التعاون مع السلطات">Behörden-Kooperation</h3>
+      <p data-de="Austausch-Hub zwischen Behörden und Menschen mit Migrationshintergrund. Wir bauen Brücken." data-so="Xarun wadaag u dhexeeya xafiisyada iyo dadka socdaalka haysta. Waxaan dhisaynaa buundo." data-en="Exchange hub between authorities and people with a migration background. We build bridges." data-ar="مركز تبادل بين الجهات الحكومية والأشخاص ذوي خلفيات الهجرة.">
+        Austausch-Hub zwischen Behörden und Menschen mit Migrationshintergrund. Wir bauen Brücken.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJEKTE -->
+<section id="projekte">
+  <div class="fade-in">
+    <div class="section-label" data-de="Unsere Arbeit" data-so="Shaqadayada" data-en="Our Work" data-ar="عملنا">Unsere Arbeit</div>
+    <h2 class="section-title" data-de="Aktuelle Projekte" data-so="Mashaaриicda Hadda" data-en="Current Projects" data-ar="المشاريع الحالية">Aktuelle Projekte</h2>
+    <p class="section-sub" data-de="Von Worms bis Mogadischu — unsere Projekte schaffen echte Veränderungen." data-so="Ka Worms ilaa Muqdisho — mashaaريicdeenna waxay abuuraan isbeddel dhabta ah." data-en="From Worms to Mogadishu — our projects create real change." data-ar="من ووَرمس إلى مقديشو — مشاريعنا تخلق تغييراً حقيقياً.">
+      Von Worms bis Mogadishu — unsere Projekte schaffen echte Veränderungen.
+    </p>
+  </div>
+  <div class="projekte-grid fade-in">
+    <div class="projekt-card">
+      <div class="projekt-card-header" style="background:#e8f0fb;">🏫</div>
+      <div class="projekt-card-body">
+        <div class="tag" style="background:#e8f0fb;color:#1a4f9c;">Worms · Laufend</div>
+        <h3 data-de="Begegnungs- und Beratungscafé" data-so="Xarunta La-talinta" data-en="Meeting & Counselling Café" data-ar="مقهى اللقاء والإرشاد">Begegnungs- und Beratungscafé</h3>
+        <p data-de="Lutherring 21 — unser Herzstück in Worms. Täglich offen für Beratung, Bildung und Begegnung." data-so="Lutherring 21 — xarunteena Worms. Maalin kasta furan." data-en="Lutherring 21 — our heart in Worms. Open daily for counselling, education and meeting." data-ar="Lutherring 21 — قلبنا في ووَرمس. مفتوح يومياً.">
+          Lutherring 21 — unser Herzstück in Worms. Täglich offen für Beratung, Bildung und Begegnung.
+        </p>
+      </div>
+    </div>
+    <div class="projekt-card">
+      <div class="projekt-card-header" style="background:#fef3c7;">🌱</div>
+      <div class="projekt-card-body">
+        <div class="tag" style="background:#fef3c7;color:#92400e;">Somalia · Aktiv</div>
+        <h3 data-de="Humanitäre Hilfe Somalia" data-so="Gargaarka Soomaaliya" data-en="Humanitarian Aid Somalia" data-ar="المساعدة الإنسانية للصومال">Humanitäre Hilfe Somalia</h3>
+        <p data-de="Unterstützung von Familien in Krisengebieten, Bildungsförderung und Zusammenarbeit mit lokalen Organisationen." data-so="Taageero qoysaska degmooyinka colaadda, horumarinta waxbarashada." data-en="Support for families in crisis areas, educational promotion and cooperation with local organisations." data-ar="دعم الأسر في مناطق الأزمات وتعزيز التعليم.">
+          Unterstützung von Familien in Krisengebieten, Bildungsförderung und Zusammenarbeit mit lokalen Organisationen.
+        </p>
+      </div>
+    </div>
+    <div class="projekt-card">
+      <div class="projekt-card-header" style="background:#dcfce7;">🎨</div>
+      <div class="projekt-card-body">
+        <div class="tag" style="background:#dcfce7;color:#166534;">Worms · Neu</div>
+        <h3 data-de="Kunst & Medien für Jugendliche" data-so="Farshaxan & Warbaahinta Dhalinyarada" data-en="Art & Media for Youth" data-ar="الفن والإعلام للشباب">Kunst & Medien für Jugendliche</h3>
+        <p data-de="Kreative Kurse in Kunst, Malerei und digitalen Medien für Kinder und Jugendliche mit Migrationshintergrund." data-so="Koorsooyin hal-abuurka farshaxanka, sawirka iyo warbaahinta dhijitaalka." data-en="Creative courses in art, painting and digital media for children and young people with migration backgrounds." data-ar="دورات إبداعية في الفن والرسم والإعلام الرقمي.">
+          Kreative Kurse in Kunst, Malerei und digitalen Medien für Kinder und Jugendliche mit Migrationshintergrund.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MITMACHEN -->
+<section id="mitmachen">
+  <div class="fade-in">
+    <div class="section-label" data-de="Werden Sie Teil von uns" data-so="Noqo qayb naga mid ah" data-en="Become part of us" data-ar="كن جزءاً منا">Werden Sie Teil von uns</div>
+    <h2 class="section-title" data-de="Gemeinsam mehr erreichen" data-so="Wadajir wax badan la gaaro" data-en="Achieve more together" data-ar="تحقيق المزيد معاً">Gemeinsam mehr erreichen</h2>
+    <p class="section-sub" data-de="Ob als Ehrenamtlicher, Spender oder Partner — jede Unterstützung zählt und macht einen echten Unterschied." data-so="Haddaad tahay xoogaa-tashi, deeq-bixin, ama ortner — taageero kasta waa muhiim." data-en="Whether as a volunteer, donor or partner — every form of support counts and makes a real difference." data-ar="سواء كمتطوع أو متبرع أو شريك — كل دعم مهم ويحدث فرقاً حقيقياً.">
+      Ob als Ehrenamtlicher, Spender oder Partner — jede Unterstützung zählt und macht einen echten Unterschied.
+    </p>
+  </div>
+  <div class="mitmachen-grid fade-in">
+    <div class="mitmachen-card">
+      <h3 data-de="🙋 Ehrenamtlich helfen" data-so="🙋 Caawimo xoogaa-tashi" data-en="🙋 Volunteer" data-ar="🙋 التطوع">🙋 Ehrenamtlich helfen</h3>
+      <p data-de="Bringen Sie Ihre Fähigkeiten ein — als Berater, Nachhilfelehrer, Übersetzer oder Organisationshelfer." data-so="Ku biir xirfadahaaga — la-taliye, macallin, turjumaan ama kaaliye." data-en="Bring your skills — as an advisor, tutor, translator or organisational helper." data-ar="أضف مهاراتك — كمستشار أو معلم أو مترجم أو مساعد تنظيمي.">
+        Bringen Sie Ihre Fähigkeiten ein — als Berater, Nachhilfelehrer, Übersetzer oder Organisationshelfer.
+      </p>
+      <a href="#kontakt" data-de="Kontakt aufnehmen →" data-so="Xiriir la samee →" data-en="Get in touch →" data-ar="تواصل معنا →">Kontakt aufnehmen →</a>
+    </div>
+    <div class="mitmachen-card">
+      <h3 data-de="💛 Spenden" data-so="💛 Deeq bixi" data-en="💛 Donate" data-ar="💛 التبرع">💛 Spenden</h3>
+      <p data-de="Ihre Spende ermöglicht Nachhilfe, Beratung, humanitäre Hilfe und kulturelle Angebote für Menschen in Not." data-so="Deeqaaddadu waxay sahlaysaa tababar, la-talin, gargaar bini'aadantinimo iyo adeegyada dhaqameed." data-en="Your donation enables tutoring, counselling, humanitarian aid and cultural offerings for people in need." data-ar="تبرعك يمكّن دروس التقوية والإرشاد والمساعدة الإنسانية.">
+        Ihre Spende ermöglicht Nachhilfe, Beratung, humanitäre Hilfe und kulturelle Angebote für Menschen in Not.
+      </p>
+      <a href="#kontakt" data-de="Jetzt spenden →" data-so="Hadda deeq bixi →" data-en="Donate now →" data-ar="تبرع الآن →">Jetzt spenden →</a>
+    </div>
+    <div class="mitmachen-card">
+      <h3 data-de="🤝 Partner werden" data-so="🤝 Noqo ortner" data-en="🤝 Become a partner" data-ar="🤝 كن شريكاً">🤝 Partner werden</h3>
+      <p data-de="Behörden, Vereine, Unternehmen — gemeinsam schaffen wir nachhaltige Strukturen für Integration und Bildung." data-so="Xafiisyo, ururo, shirkado — wadajir waxaan abuurnaa qaab-dhismeedyo joogteyn ah." data-en="Authorities, associations, companies — together we create sustainable structures for integration and education." data-ar="السلطات والجمعيات والشركات — معاً نخلق هياكل مستدامة للاندماج والتعليم.">
+        Behörden, Vereine, Unternehmen — gemeinsam schaffen wir nachhaltige Strukturen für Integration und Bildung.
+      </p>
+      <a href="#kontakt" data-de="Partnerschaft anfragen →" data-so="Codsasho ortnership →" data-en="Request partnership →" data-ar="طلب شراكة →">Partnerschaft anfragen →</a>
+    </div>
+    <div class="mitmachen-card">
+      <h3 data-de="📢 Mitglied werden" data-so="📢 Xubin noqo" data-en="📢 Become a member" data-ar="📢 كن عضواً">📢 Mitglied werden</h3>
+      <p data-de="Als Vereinsmitglied gestalten Sie aktiv die Zukunft von SeKO e.V. und stärken unsere Gemeinschaft." data-so="Xubin ahaan waxaad si firfircoon u qaabaysaa mustaqbalka SeKO e.V." data-en="As a member you actively shape the future of SeKO e.V. and strengthen our community." data-ar="كعضو تشكّل بنشاط مستقبل SeKO e.V. وتقوّي مجتمعنا.">
+        Als Vereinsmitglied gestalten Sie aktiv die Zukunft von SeKO e.V. und stärken unsere Gemeinschaft.
+      </p>
+      <a href="#kontakt" data-de="Mitglied werden →" data-so="Xubin noqo →" data-en="Become a member →" data-ar="كن عضواً →">Mitglied werden →</a>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="fade-in">
+    <div class="section-label" data-de="Sprechen Sie uns an" data-so="Nala xiriir" data-en="Contact us" data-ar="تواصل معنا">Sprechen Sie uns an</div>
+    <h2 class="section-title" data-de="Kontakt" data-so="Xiriirka" data-en="Contact" data-ar="التواصل">Kontakt</h2>
+  </div>
+  <div class="kontakt-grid fade-in">
+    <div class="kontakt-info">
+      <h3 data-de="So erreichen Sie uns" data-so="Sidaad nala xiriiri kartid" data-en="How to reach us" data-ar="كيف تتواصل معنا">So erreichen Sie uns</h3>
+      <div class="kontakt-item">
+        <div class="kontakt-item-icon">📍</div>
+        <div class="kontakt-item-text">
+          <strong data-de="Adresse" data-so="Cinwaanka" data-en="Address" data-ar="العنوان">Adresse</strong>
+          Lutherring 21, 67547 Worms
+        </div>
+      </div>
+      <div class="kontakt-item">
+        <div class="kontakt-item-icon">📞</div>
+        <div class="kontakt-item-text">
+          <strong data-de="Telefon" data-so="Telefoonka" data-en="Phone" data-ar="الهاتف">Telefon</strong>
+          06241 2113562 · 0176 80453355
+        </div>
+      </div>
+      <div class="kontakt-item">
+        <div class="kontakt-item-icon">✉️</div>
+        <div class="kontakt-item-text">
+          <strong>E-Mail</strong>
+          info@seko-ev.de
+        </div>
+      </div>
+      <div class="kontakt-item">
+        <div class="kontakt-item-icon">🕐</div>
+        <div class="kontakt-item-text">
+          <strong data-de="Öffnungszeiten" data-so="Saacadaha Furitaanka" data-en="Opening hours" data-ar="ساعات العمل">Öffnungszeiten</strong>
+          <span data-de="Mo – Fr: 09:00 – 17:00 Uhr" data-so="Isn – Jim: 09:00 – 17:00" data-en="Mon – Fri: 09:00 – 17:00" data-ar="الإثنين – الجمعة: 09:00 – 17:00">Mo – Fr: 09:00 – 17:00 Uhr</span>
+        </div>
+      </div>
+    </div>
+    <div class="kontakt-form">
+      <h3 style="margin-bottom:20px;font-size:18px;" data-de="Nachricht senden" data-so="Fariin dir" data-en="Send message" data-ar="إرسال رسالة">Nachricht senden</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-de="Vorname" data-so="Magaca hore" data-en="First name" data-ar="الاسم الأول">Vorname</label>
+          <input type="text" placeholder="Mohamed">
+        </div>
+        <div class="form-group">
+          <label data-de="Nachname" data-so="Magaca dambe" data-en="Last name" data-ar="اسم العائلة">Nachname</label>
+          <input type="text" placeholder="Abdulahi">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>E-Mail</label>
+        <input type="email" placeholder="name@email.de">
+      </div>
+      <div class="form-group">
+        <label data-de="Betreff" data-so="Cinwaanka" data-en="Subject" data-ar="الموضوع">Betreff</label>
+        <select>
+          <option data-de="Beratung anfragen" data-so="La-talin codso" data-en="Request counselling" data-ar="طلب استشارة">Beratung anfragen</option>
+          <option data-de="Ehrenamtlich helfen" data-so="Xoogaa-tashi" data-en="Volunteer" data-ar="التطوع">Ehrenamtlich helfen</option>
+          <option data-de="Spende / Förderung" data-so="Deeq / Taageero" data-en="Donation / Funding" data-ar="التبرع / التمويل">Spende / Förderung</option>
+          <option data-de="Partnerschaft" data-so="Ortnership" data-en="Partnership" data-ar="الشراكة">Partnerschaft</option>
+          <option data-de="Sonstiges" data-so="Kale" data-en="Other" data-ar="أخرى">Sonstiges</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label data-de="Ihre Nachricht" data-so="Fariiintaada" data-en="Your message" data-ar="رسالتك">Ihre Nachricht</label>
+        <textarea placeholder="Wie können wir Ihnen helfen?"></textarea>
+      </div>
+      <button class="btn-form" data-de="Nachricht senden →" data-so="Fariin dir →" data-en="Send message →" data-ar="إرسال →">Nachricht senden →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <div class="nav-logo-mark">Se</div>
+        <span style="font-weight:700;color:white;font-size:16px;">SeKO e.V.</span>
+      </div>
+      <p data-de="Somalische Europäische Kooperation e.V. — Integration, Bildung und soziale Teilhabe seit 2020." data-so="Somalische Europäische Kooperation e.V. — Dhexgal, waxbarasho iyo ka qeybgal bulsheed tan iyo 2020." data-en="Somalische Europäische Kooperation e.V. — Integration, education and social participation since 2020." data-ar="Somalische Europäische Kooperation e.V. — الاندماج والتعليم والمشاركة الاجتماعية منذ 2020.">
+        Somalische Europäische Kooperation e.V. — Integration, Bildung und soziale Teilhabe seit 2020.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4 data-de="Angebote" data-so="Adeegyada" data-en="Services" data-ar="الخدمات">Angebote</h4>
+      <a href="#angebote" data-de="Beratung & Unterstützung" data-so="La-talin & Taageero" data-en="Counselling" data-ar="الإرشاد">Beratung & Unterstützung</a>
+      <a href="#angebote" data-de="Bildung & Nachhilfe" data-so="Waxbarasho" data-en="Education" data-ar="التعليم">Bildung & Nachhilfe</a>
+      <a href="#angebote" data-de="Begegnungscafé" data-so="Xarunta Kulmitaanka" data-en="Meeting Café" data-ar="مقهى اللقاء">Begegnungscafé</a>
+      <a href="#angebote" data-de="Internationale Hilfe" data-so="Gargaarka Caalamiga" data-en="International Aid" data-ar="المساعدة الدولية">Internationale Hilfe</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-de="Mitmachen" data-so="Ku biir" data-en="Get involved" data-ar="شارك">Mitmachen</h4>
+      <a href="#mitmachen" data-de="Ehrenamtlich helfen" data-so="Xoogaa-tashi" data-en="Volunteer" data-ar="التطوع">Ehrenamtlich helfen</a>
+      <a href="#mitmachen" data-de="Spenden" data-so="Deeq bixi" data-en="Donate" data-ar="التبرع">Spenden</a>
+      <a href="#mitmachen" data-de="Partner werden" data-so="Ortner noqo" data-en="Partner" data-ar="شريك">Partner werden</a>
+      <a href="#kontakt" data-de="Kontakt" data-so="Xiriirka" data-en="Contact" data-ar="التواصل">Kontakt</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 SeKO e.V. · Lutherring 21, 67547 Worms</span>
+    <span data-de="Gemeinnützig · Eingetragener Verein" data-so="Aan faa'iido doonin · Ururka Diiwaan-gashan" data-en="Non-profit · Registered association" data-ar="غير ربحي · جمعية مسجلة">Gemeinnützig · Eingetragener Verein</span>
+  </div>
+</footer>
+
+<script>
+// Language switching
+let currentLang = 'de';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
+    el.innerHTML = val;
+  });
+  // RTL for Arabic
+  document.body.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
+}
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // stagger children
+      e.target.querySelectorAll('.card, .mitmachen-card, .projekt-card').forEach((c, i) => {
+        setTimeout(() => c.style.opacity = '1', i * 80);
+      });
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Form submit
+document.querySelector('.btn-form').addEventListener('click', () => {
+  const msgs = {
+    de: '✅ Vielen Dank! Wir melden uns bald.',
+    so: '✅ Mahadsanid! Dhawaan kuula soo xiriiri doonnaa.',
+    en: '✅ Thank you! We will be in touch soon.',
+    ar: '✅ شكراً! سنتواصل معك قريباً.'
+  };
+  alert(msgs[currentLang]);
+});
+</script>
+</body>
+</html>
