@@ -54,7 +54,8 @@
   /* ── HERO ── */
   .hero {
     min-height: 88vh;
-    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 55%, var(--blue-mid) 100%);
+    background: linear-gradient(135deg, rgba(7,53,117,0.92) 0%, rgba(13,86,179,0.88) 55%, rgba(30,111,217,0.85) 100%), url('bild7.webp');
+    background-size: cover; background-position: center;
     display: flex; align-items: center;
     padding: 100px 6% 70px;
     position: relative; overflow: hidden;
@@ -128,7 +129,7 @@
   .projekte-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 48px; }
   .projekt-card { border-radius: 16px; overflow: hidden; border: 1px solid #e8edf5; transition: all 0.25s; }
   .projekt-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(13,86,179,0.1); }
-  .projekt-card-header { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+  .projekt-card-header { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
   .projekt-card-body { padding: 24px; }
   .projekt-card-body h3 { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 8px; }
   .projekt-card-body p { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
@@ -164,6 +165,17 @@
   .footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
   .footer-col a:hover { color: var(--gold); }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+
+
+  /* ── GALERIE ── */
+  #galerie { background: var(--white); }
+  .galerie-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 40px; }
+  .galerie-item { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
+  .galerie-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; display: block; }
+  .galerie-item:hover img { transform: scale(1.08); }
+  .galerie-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 60%, rgba(7,53,117,0.5)); opacity: 0; transition: opacity 0.3s; }
+  .galerie-item:hover::after { opacity: 1; }
+  .galerie-item.tall { grid-row: span 2; aspect-ratio: 3/4; }
 
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
   .hamburger span { width: 24px; height: 2px; background: var(--gray-800); border-radius: 2px; }
@@ -201,6 +213,7 @@
   <ul class="nav-links">
     <li><a href="#angebote" data-de="Angebote" data-so="Adeegyada" data-en="Services" data-ar="الخدمات">Angebote</a></li>
     <li><a href="#projekte" data-de="Projekte" data-so="Mashaariicda" data-en="Projects" data-ar="المشاريع">Projekte</a></li>
+    <li><a href="#galerie" data-de="Galerie" data-so="Sawirro" data-en="Gallery" data-ar="معرض">Galerie</a></li>
     <li><a href="#mitmachen" data-de="Mitmachen" data-so="Ku biir" data-en="Get involved" data-ar="شارك">Mitmachen</a></li>
     <li><a href="#kontakt" data-de="Kontakt" data-so="Xiriirka" data-en="Contact" data-ar="التواصل">Kontakt</a></li>
     <li><a href="#kontakt" class="nav-cta" data-de="Jetzt helfen →" data-so="Caawi →" data-en="Help now →" data-ar="ساعد →">Jetzt helfen →</a></li>
@@ -257,9 +270,29 @@
     <p class="section-sub" data-de="Von Worms bis Mogadischu — unsere Projekte schaffen echte Veränderungen." data-so="Ka Worms ilaa Muqdisho — mashaariicdeena waxay abuuraan isbeddel dhab ah." data-en="From Worms to Mogadishu — our projects create real change." data-ar="من ووَرمس إلى مقديشو — مشاريعنا تخلق تغييراً حقيقياً.">Von Worms bis Mogadischu — unsere Projekte schaffen echte Veränderungen.</p>
   </div>
   <div class="projekte-grid fade-in">
-    <div class="projekt-card"><div class="projekt-card-header" style="background:#e6effa;">🏫</div><div class="projekt-card-body"><div class="tag" style="background:#e6effa;color:#0d56b3;">Worms · Laufend</div><h3 data-de="Begegnungs- und Beratungscafé" data-so="Xarunta La-talinta" data-en="Meeting & Counselling Café" data-ar="مقهى اللقاء والإرشاد">Begegnungs- und Beratungscafé</h3><p data-de="Lutherring 21 — unser Herzstück in Worms. Täglich offen für Beratung, Bildung und Begegnung." data-so="Lutherring 21 — xarunteena Worms. Maalin kasta furan." data-en="Lutherring 21 — our heart in Worms. Open daily." data-ar="Lutherring 21 — قلبنا في ووَرمس. مفتوح يومياً.">Lutherring 21 — unser Herzstück in Worms. Täglich offen für Beratung, Bildung und Begegnung.</p></div></div>
-    <div class="projekt-card"><div class="projekt-card-header" style="background:#fff4dc;">🌱</div><div class="projekt-card-body"><div class="tag" style="background:#fff4dc;color:#c98800;">Somalia · Aktiv</div><h3 data-de="Humanitäre Hilfe Somalia" data-so="Gargaarka Soomaaliya" data-en="Humanitarian Aid Somalia" data-ar="المساعدة الإنسانية للصومال">Humanitäre Hilfe Somalia</h3><p data-de="Unterstützung von Familien in Krisengebieten, Bildungsförderung und Zusammenarbeit." data-so="Taageero qoysaska colaadda, horumarinta waxbarashada." data-en="Support for families in crisis areas and educational promotion." data-ar="دعم الأسر في مناطق الأزمات وتعزيز التعليم.">Unterstützung von Familien in Krisengebieten, Bildungsförderung und Zusammenarbeit.</p></div></div>
-    <div class="projekt-card"><div class="projekt-card-header" style="background:#e6effa;">🎨</div><div class="projekt-card-body"><div class="tag" style="background:#fff4dc;color:#c98800;">Worms · Neu</div><h3 data-de="Kunst & Medien für Jugendliche" data-so="Farshaxan & Warbaahinta" data-en="Art & Media for Youth" data-ar="الفن والإعلام للشباب">Kunst & Medien für Jugendliche</h3><p data-de="Kreative Kurse in Kunst, Malerei und digitalen Medien für Kinder und Jugendliche." data-so="Koorsooyin farshaxanka, sawirka iyo warbaahinta dhijitaalka." data-en="Creative courses in art, painting and digital media for young people." data-ar="دورات إبداعية في الفن والرسم والإعلام الرقمي.">Kreative Kurse in Kunst, Malerei und digitalen Medien für Kinder und Jugendliche.</p></div></div>
+    <div class="projekt-card"><div class="projekt-card-header" style="background:url('bild1.webp');background-size:cover;background-position:center;"></div><div class="projekt-card-body"><div class="tag" style="background:#e6effa;color:#0d56b3;">Worms · Laufend</div><h3 data-de="Begegnungs- und Beratungscafé" data-so="Xarunta La-talinta" data-en="Meeting & Counselling Café" data-ar="مقهى اللقاء والإرشاد">Begegnungs- und Beratungscafé</h3><p data-de="Lutherring 21 — unser Herzstück in Worms. Täglich offen für Beratung, Bildung und Begegnung." data-so="Lutherring 21 — xarunteena Worms. Maalin kasta furan." data-en="Lutherring 21 — our heart in Worms. Open daily." data-ar="Lutherring 21 — قلبنا في ووَرمس. مفتوح يومياً.">Lutherring 21 — unser Herzstück in Worms. Täglich offen für Beratung, Bildung und Begegnung.</p></div></div>
+    <div class="projekt-card"><div class="projekt-card-header" style="background:url('bild5.webp');background-size:cover;background-position:center;"></div><div class="projekt-card-body"><div class="tag" style="background:#fff4dc;color:#c98800;">Somalia · Aktiv</div><h3 data-de="Humanitäre Hilfe Somalia" data-so="Gargaarka Soomaaliya" data-en="Humanitarian Aid Somalia" data-ar="المساعدة الإنسانية للصومال">Humanitäre Hilfe Somalia</h3><p data-de="Unterstützung von Familien in Krisengebieten, Bildungsförderung und Zusammenarbeit." data-so="Taageero qoysaska colaadda, horumarinta waxbarashada." data-en="Support for families in crisis areas and educational promotion." data-ar="دعم الأسر في مناطق الأزمات وتعزيز التعليم.">Unterstützung von Familien in Krisengebieten, Bildungsförderung und Zusammenarbeit.</p></div></div>
+    <div class="projekt-card"><div class="projekt-card-header" style="background:url('bild6.webp');background-size:cover;background-position:center;"></div><div class="projekt-card-body"><div class="tag" style="background:#fff4dc;color:#c98800;">Worms · Neu</div><h3 data-de="Kunst & Medien für Jugendliche" data-so="Farshaxan & Warbaahinta" data-en="Art & Media for Youth" data-ar="الفن والإعلام للشباب">Kunst & Medien für Jugendliche</h3><p data-de="Kreative Kurse in Kunst, Malerei und digitalen Medien für Kinder und Jugendliche." data-so="Koorsooyin farshaxanka, sawirka iyo warbaahinta dhijitaalka." data-en="Creative courses in art, painting and digital media for young people." data-ar="دورات إبداعية في الفن والرسم والإعلام الرقمي.">Kreative Kurse in Kunst, Malerei und digitalen Medien für Kinder und Jugendliche.</p></div></div>
+  </div>
+</section>
+
+
+<!-- GALERIE -->
+<section id="galerie">
+  <div class="fade-in">
+    <div class="section-label" data-de="Einblicke" data-so="Sawirro" data-en="Insights" data-ar="لمحات">Einblicke</div>
+    <h2 class="section-title" data-de="Unsere Gemeinschaft" data-so="Bulshadayada" data-en="Our Community" data-ar="مجتمعنا">Unsere Gemeinschaft</h2>
+    <p class="section-sub" data-de="Momente aus unserer Arbeit — Begegnung, Bildung und Zusammenhalt in Worms und darüber hinaus." data-so="Daqiiqado ka mid ah shaqadayada — kulan, waxbarasho iyo midnimo." data-en="Moments from our work — meeting, education and togetherness in Worms and beyond." data-ar="لحظات من عملنا — اللقاء والتعليم والتماسك.">Momente aus unserer Arbeit — Begegnung, Bildung und Zusammenhalt in Worms und darüber hinaus.</p>
+  </div>
+  <div class="galerie-grid fade-in">
+    <div class="galerie-item"><img src="bild2.webp" alt="SEKO Iftar Event" loading="lazy"></div>
+    <div class="galerie-item"><img src="bild4.webp" alt="Begegnungscafé" loading="lazy"></div>
+    <div class="galerie-item tall"><img src="bild6.webp" alt="Jugendarbeit" loading="lazy"></div>
+    <div class="galerie-item"><img src="bild8.webp" alt="Beratung" loading="lazy"></div>
+    <div class="galerie-item"><img src="bild3.webp" alt="Gemeinschaft Worms" loading="lazy"></div>
+    <div class="galerie-item"><img src="bild5.webp" alt="Somalia Projekt" loading="lazy"></div>
+    <div class="galerie-item"><img src="bild9.webp" alt="Iftar Gemeinschaft" loading="lazy"></div>
+    <div class="galerie-item"><img src="bild1.webp" alt="Team Meeting" loading="lazy"></div>
   </div>
 </section>
 
