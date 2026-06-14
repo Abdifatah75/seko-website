@@ -1120,40 +1120,59 @@
     }
   
     /* Real SEKO Images */
-    .photo-img-1 { background-image: url('./Bilder/bild1.webp'); }
-    .photo-img-2 { background-image: url('./Bilder/bild2.webp'); }
-    .photo-img-3 { background-image: url('./Bilder/bild3.webp'); }
-    .photo-img-4 { background-image: url('./Bilder/bild4.webp'); }
-    .photo-img-5 { background-image: url('./Bilder/bild5.webp'); }
-    .photo-img-6 { background-image: url('./Bilder/bild6.webp'); }
-    .photo-img-7 { background-image: url('./Bilder/bild7.webp'); }
-    .photo-img-8 { background-image: url('./Bilder/bild8.webp'); }
-    .photo-img-9 { background-image: url('./Bilder/bild9.webp'); }
+    . { background-image: url('./Bilder/bild1.webp'); }
+    . { background-image: url('./Bilder/bild2.webp'); }
+    . { background-image: url('./Bilder/bild3.webp'); }
+    . { background-image: url('./Bilder/bild4.webp'); }
+    . { background-image: url('./Bilder/bild5.webp'); }
+    . { background-image: url('./Bilder/bild6.webp'); }
+    . { background-image: url('./Bilder/bild7.webp'); }
+    . { background-image: url('./Bilder/bild8.webp'); }
+    . { background-image: url('./Bilder/bild9.webp'); }
 
-    .photo-img-1,
-    .photo-img-2,
-    .photo-img-3,
-    .photo-img-4,
-    .photo-img-5,
-    .photo-img-6,
-    .photo-img-7,
-    .photo-img-8,
-    .photo-img-9 {
+    .,
+    .,
+    .,
+    .,
+    .,
+    .,
+    .,
+    .,
+    . {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    .photo-img-1 i, .photo-img-1 span,
-    .photo-img-2 i, .photo-img-2 span,
-    .photo-img-3 i, .photo-img-3 span,
-    .photo-img-4 i, .photo-img-4 span,
-    .photo-img-5 i, .photo-img-5 span,
-    .photo-img-6 i, .photo-img-6 span,
-    .photo-img-7 i, .photo-img-7 span,
-    .photo-img-8 i, .photo-img-8 span,
-    .photo-img-9 i, .photo-img-9 span {
+    . i, . span,
+    . i, . span,
+    . i, . span,
+    . i, . span,
+    . i, . span,
+    . i, . span,
+    . i, . span,
+    . i, . span,
+    . i, . span {
       display: none;
+    }
+  
+    /* Image layout tuning */
+    .hero-photo.photo-img-1 {
+      background-position: center center;
+    }
+
+    .about-photo.photo-img-2 {
+      background-position: center center;
+    }
+
+    .event-photo.photo-img-3,
+    .event-photo.photo-img-4,
+    .event-photo.photo-img-5 {
+      background-position: center center;
+    }
+
+    .photo-slot {
+      overflow: hidden;
     }
   </style>
 </head>
@@ -1253,7 +1272,7 @@
             </div>
           </div>
 
-          <div class="photo-slot photo-slot--gold photo-slot--arch hero-photo photo-img-1" role="img" aria-label="Community photo placeholder">
+          <div class="photo-slot photo-slot--gold photo-slot--arch hero-photo  photo-img-1" role="img" aria-label="Community photo placeholder">
             <i class="ph ph-users-three"></i>
             <span>SeKO community day</span>
           </div>
@@ -1268,7 +1287,7 @@
       <div class="container">
         <div class="about-grid">
 
-          <div class="photo-slot about-photo reveal photo-img-2" role="img" aria-label="About SeKO photo placeholder">
+          <div class="photo-slot about-photo reveal  photo-img-2" role="img" aria-label="About SeKO photo placeholder">
             <i class="ph ph-buildings"></i>
             <span>Our office in Worms</span>
           </div>
@@ -1435,7 +1454,7 @@
           </div>
 
           <div class="card card--interactive event-card reveal reveal-delay-1">
-            <div class="photo-slot photo-slot--gold event-photo photo-img-3" style="border-radius:0" role="img" aria-label="Event photo">
+            <div class="photo-slot photo-slot--gold event-photo photo-img-4" style="border-radius:0" role="img" aria-label="Event photo">
               <i class="ph ph-users"></i>
             </div>
             <div class="event-body">
@@ -1452,7 +1471,7 @@
           </div>
 
           <div class="card card--interactive event-card reveal reveal-delay-2">
-            <div class="photo-slot event-photo photo-img-3" style="border-radius:0" role="img" aria-label="Event photo">
+            <div class="photo-slot event-photo photo-img-5" style="border-radius:0" role="img" aria-label="Event photo">
               <i class="ph ph-scales"></i>
             </div>
             <div class="event-body">
@@ -1846,4 +1865,5 @@
 
 </body>
 </html>
+
 
