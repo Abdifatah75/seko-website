@@ -538,8 +538,10 @@
     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     .hero {
       background:
-      radial-gradient(circle at 8% 20%, rgba(242,161,0,.18), transparent 24%),
-      linear-gradient(135deg, var(--blue-800) 0%, var(--blue-700) 58%, var(--blue-900) 100%);
+        linear-gradient(90deg, rgba(8,18,58,.78) 0%, rgba(8,18,58,.52) 45%, rgba(8,18,58,.18) 100%),
+        url('./Bilder/hero-community-bg.jpg');
+      background-size: cover;
+      background-position: center center;
       position: relative;
       overflow: hidden;
       padding-block: 3.2rem;
@@ -549,8 +551,7 @@
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
-      gap: clamp(2rem, 5vw, 4.5rem);
+      grid-template-columns: minmax(0, 720px);
       align-items: center;
     }
     .hero-eyebrow {
@@ -1331,10 +1332,7 @@
             </div>
           </div>
 
-          <div class="photo-slot photo-slot--gold photo-slot--arch hero-photo  photo-img-1" role="img" aria-label="Community photo placeholder">
-            <i class="ph ph-users-three"></i>
-            <span>SeKO community day</span>
-          </div>
+          <!-- Hero image removed: background image is now used instead -->
         </div>
       </div>
     </section>
