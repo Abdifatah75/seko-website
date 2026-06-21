@@ -72,19 +72,14 @@
       text-decoration: none;
     }
 
-    .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
-      color: var(--white);
-      font-family: "Poppins", sans-serif;
-      font-weight: 800;
-      font-size: 14px;
-      box-shadow: 0 10px 24px rgba(13, 86, 179, 0.22);
-    }
+    .brand-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(13, 86, 179, 0.16);
+  flex-shrink: 0;
+}
 
     .brand-text strong {
       display: block;
@@ -509,6 +504,10 @@
     }
 
     @media (max-width: 620px) {
+      .brand-logo {
+        width: 58px;
+        height: 58px;
+      }
       .site-nav {
         height: auto;
         min-height: 70px;
@@ -625,7 +624,7 @@
 <body>
   <nav class="site-nav" aria-label="Hauptnavigation">
     <a class="brand" href="index.html" aria-label="Zur SEKO Startseite">
-      <span class="brand-mark">SEKO</span>
+      <img class="brand-logo" src="./Bilder/logo-seco.webp" alt="SEKO e.V. Logo">
       <span class="brand-text">
         <strong>SEKO e.V.</strong>
         <span>Somalische Europäische Kooperation</span>
