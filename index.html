@@ -544,7 +544,7 @@
       background-position: center center;
       position: relative;
       overflow: hidden;
-      padding-block: 3.2rem;
+      padding-block: 2.6rem;
       min-height: calc(100vh - 92px);
       display: flex;
       align-items: center;
@@ -563,20 +563,20 @@
       color: var(--gold-400);
     }
     .hero h1 {
-      font-size: clamp(2.4rem, 3.8vw, 3.8rem);
+      font-size: clamp(2rem, 3vw, 3rem);
       font-weight: 900;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.03em;
       color: #fff;
-      line-height: 1.02;
-      margin-top: var(--space-4);
-      max-width: 13ch;
+      line-height: 1.05;
+      margin-top: var(--space-3);
+      max-width: 16ch;
     }
     .hero-lead {
-      font-size: 1.05rem;
-      line-height: 1.75;
+      font-size: 1rem;
+      line-height: 1.62;
       color: var(--blue-100);
-      margin-top: var(--space-5);
-      max-width: 52ch;
+      margin-top: var(--space-4);
+      max-width: 50ch;
     }
     .hero-ctas { margin-top: var(--space-6); }
      .hero-stats {
@@ -1350,35 +1350,43 @@
       <div class="container">
         <div class="hero-grid">
           <div>
-            <span class="hero-eyebrow">Soo dhawow · Willkommen · Welcome</span>
-            <h1>Building bridges for Somali families in Germany.</h1>
-            <p class="hero-lead">
-              From arrival and integration to education, legal help and community celebration —
-              SeKO walks beside you, in your language.
-            </p>
-            <div class="btn-group hero-ctas">
-              <a href="#donate" class="btn btn--accent btn--lg" onclick="openDonate()">
-                <i class="ph ph-hand-heart"></i> Support our work
-              </a>
-              <a href="#contact" class="btn btn--on-ink btn--lg">
-                Get support <i class="ph ph-arrow-right"></i>
-              </a>
-            </div>
-            <div class="hero-stats">
-              <div class="stat">
-                <span class="stat__val">1,240+</span>
-                <span class="stat__label">Families supported</span>
-              </div>
-              <div class="stat">
-                <span class="stat__val">2014</span>
-                <span class="stat__label">Founded in Germany</span>
-              </div>
-              <div class="stat">
-                <span class="stat__val">80+</span>
-                <span class="stat__label">Volunteers</span>
-              </div>
-            </div>
-          </div>
+<span class="hero-eyebrow" data-i18n="heroEyebrow">Soo dhawow · Willkommen · Welcome</span>
+
+<h1 data-i18n="heroTitle">Building bridges for Somali families in Germany.</h1>
+
+<p class="hero-lead" data-i18n="heroLead">
+  From arrival and integration to education, legal help and community celebration —
+  SeKO walks beside you, in your language.
+</p>
+
+<div class="btn-group hero-ctas">
+  <a href="#donate" class="btn btn--accent btn--lg" onclick="openDonate()">
+    <i class="ph ph-hand-heart"></i>
+    <span data-i18n="supportButton">Support our work</span>
+  </a>
+
+  <a href="#contact" class="btn btn--on-ink btn--lg">
+    <span data-i18n="getSupportButton">Get support</span>
+    <i class="ph ph-arrow-right"></i>
+  </a>
+</div>
+
+<div class="hero-stats">
+  <div class="stat">
+    <span class="stat__val">1,240+</span>
+    <span class="stat__label" data-i18n="familiesSupported">Families supported</span>
+  </div>
+
+  <div class="stat">
+    <span class="stat__val">2014</span>
+    <span class="stat__label" data-i18n="foundedGermany">Founded in Germany</span>
+  </div>
+
+  <div class="stat">
+    <span class="stat__val">80+</span>
+    <span class="stat__label" data-i18n="volunteers">Volunteers</span>
+  </div>
+</div>
 
           <!-- Hero image removed: background image is now used instead -->
         </div>
@@ -1867,15 +1875,63 @@
     }
 
     /* â”€â”€ Lang switcher â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const lang = btn.dataset.lang;
-        document.documentElement.lang = lang === 'AR' ? 'ar' : lang === 'SO' ? 'so' : lang === 'DE' ? 'de' : 'en';
-        document.documentElement.dir = lang === 'AR' ? 'rtl' : 'ltr';
-      });
-    });
+const translations = {
+  EN: {
+    heroEyebrow: 'Welcome · Willkommen · Soo dhawow',
+    heroTitle: 'Building bridges for Somali families in Germany.',
+    heroLead: 'From arrival and integration to education, legal help and community celebration — SeKO walks beside you, in your language.',
+    supportButton: 'Support our work',
+    getSupportButton: 'Get support',
+    familiesSupported: 'Families supported',
+    foundedGermany: 'Founded in Germany',
+    volunteers: 'Volunteers'
+  },
+  DE: {
+    heroEyebrow: 'Willkommen · Welcome · Soo dhawow',
+    heroTitle: 'Brücken bauen für somalische Familien in Deutschland.',
+    heroLead: 'Von Ankunft und Integration bis Bildung, Beratung und Gemeinschaft — SEKO begleitet Sie in Ihrer Sprache.',
+    supportButton: 'Unsere Arbeit unterstützen',
+    getSupportButton: 'Hilfe erhalten',
+    familiesSupported: 'Familien unterstützt',
+    foundedGermany: 'Gegründet in Deutschland',
+    volunteers: 'Ehrenamtliche'
+  },
+  SO: {
+    heroEyebrow: 'Soo dhawow · Willkommen · Welcome',
+    heroTitle: 'Buundo isku xiraysa Dadka Soomaaliyeed iyo Jarmalka.',
+    heroLead: 'Imaanshahiyahaaga ilaa aad la qabsatid Jarmalka, SEKO way ku garab-taagantahay.',
+    supportButton: 'Ina-Taageer',
+    getSupportButton: 'Hel taageero',
+    familiesSupported: 'Dadka la caawiyay',
+    foundedGermany: 'Laga aasaasay',
+    volunteers: 'Caawiye-yaal'
+  }
+};
+
+function applyLanguage(lang) {
+  const selected = translations[lang] || translations.EN;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (selected[key]) {
+      el.textContent = selected[key];
+    }
+  });
+
+  document.documentElement.lang =
+    lang === 'SO' ? 'so' :
+    lang === 'DE' ? 'de' : 'en';
+
+  document.documentElement.dir = 'ltr';
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+});
 
     /* â”€â”€ Donate modal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     const donateModal = document.getElementById('donateModal');
