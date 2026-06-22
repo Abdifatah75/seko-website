@@ -1097,38 +1097,86 @@
       .footer-grid   { grid-template-columns: 1fr 1fr; gap: var(--space-7); }
     }
 
-    @media (max-width: 768px) {
-      :root { --space-10: 3.5rem; --space-9: 2.75rem; }
+  @media (max-width: 768px) {
+  :root { --space-10: 3.5rem; --space-9: 2.75rem; }
 
-      .site-nav,
-      .lang-switcher,
-      .header-donate { display: none !important; }
-      .hamburger { display: flex; }
+  .site-nav,
+  .lang-switcher,
+  .header-donate { display: none !important; }
+  .hamburger { display: flex; }
 
-      .hero-grid    { grid-template-columns: 1fr; }
-      .hero-photo   { height: 240px; order: -1; }
-      .hero h1      { font-size: 2rem; }
-      .hero-stats   { gap: var(--space-5); }
+  .hero {
+    min-height: auto;
+    padding-block: 2.1rem;
+    background-position: 42% top;
+  }
 
-      .about-grid   { grid-template-columns: 1fr; }
-      .about-photo  { height: 260px; order: 0; }
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
 
-      .mv-grid      { grid-template-columns: 1fr; }
+  .hero h1 {
+    font-size: clamp(1.65rem, 8vw, 2.15rem);
+    line-height: 1.04;
+    max-width: 12ch;
+  }
 
-      .programs-grid { grid-template-columns: 1fr; }
-      .events-grid   { grid-template-columns: 1fr; }
+  .hero-lead {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    max-width: 32ch;
+    margin-top: var(--space-3);
+  }
 
-      .donate-grid  { grid-template-columns: 1fr; }
-      .donate-band  { padding: var(--space-6); }
+  .hero-ctas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: var(--space-4);
+  gap: var(--space-2);
+}
 
-      .contact-grid { grid-template-columns: 1fr; }
-      .form-row     { grid-template-columns: 1fr; }
+.hero-ctas .btn {
+  width: 100%;
+  justify-content: center;
+  padding: 0.78rem 0.75rem;
+  font-size: 0.82rem;
+}
 
-      .footer-grid  { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
 
-      .modal-amounts { gap: var(--space-2); }
-    }
+  .stat__val {
+    font-size: 1.15rem;
+  }
+
+  .stat__label {
+    font-size: 0.6rem;
+    line-height: 1.15;
+  }
+
+  .about-grid   { grid-template-columns: 1fr; }
+  .about-photo  { height: 260px; order: 0; }
+
+  .mv-grid      { grid-template-columns: 1fr; }
+
+  .programs-grid { grid-template-columns: 1fr; }
+  .events-grid   { grid-template-columns: 1fr; }
+
+  .donate-grid  { grid-template-columns: 1fr; }
+  .donate-band  { padding: var(--space-6); }
+
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row     { grid-template-columns: 1fr; }
+
+  .footer-grid  { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .modal-amounts { gap: var(--space-2); }
+}
 
     @media (max-width: 480px) {
       .hero-stats { flex-direction: column; gap: var(--space-4); }
