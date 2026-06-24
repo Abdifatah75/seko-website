@@ -1300,11 +1300,11 @@
         </a>
 
         <nav class="site-nav" aria-label="Main navigation">
-          <a href="#programs">Programs</a>
-          <a href="#events">Events</a>
-          <a href="#about">About</a>
-          <a href="mitglied.html">Mitgliedschaft</a>
-          <a href="#contact">Contact</a>
+          <a href="#programs" data-i18n="navPrograms">Programs</a>
+          <a href="#events" data-i18n="navEvents">Events</a>
+          <a href="#about" data-i18n="navAbout">About</a>
+          <a href="mitglied.html" data-i18n="navMembership">Mitgliedschaft</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
         </nav>
 
         <div class="lang-switcher" role="group" aria-label="Language">
@@ -1314,10 +1314,10 @@
           <button class="lang-btn" data-lang="AR">AR</button>
         </div>
 
-        <a href="#donate" class="btn btn--accent btn--sm header-donate" onclick="openDonate()">
-          <i class="ph ph-hand-heart"></i> Donate
-        </a>
-
+      <a href="#donate" class="btn btn--accent btn--sm header-donate" onclick="openDonate()">
+      <i class="ph ph-hand-heart"></i>
+      <span data-i18n="navDonate">Donate</span>
+    </a>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -1884,7 +1884,13 @@ const translations = {
     getSupportButton: 'Get support',
     familiesSupported: 'Families supported',
     foundedGermany: 'Founded in Germany',
-    volunteers: 'Volunteers'
+    volunteers: 'Volunteers',volunteers: 'Volunteers',
+navPrograms: 'Programs',
+navEvents: 'Events',
+navAbout: 'About',
+navMembership: 'Membership',
+navContact: 'Contact',
+navDonate: 'Donate'
   },
   DE: {
     heroEyebrow: 'Willkommen · Welcome · Soo dhawow',
@@ -1894,7 +1900,13 @@ const translations = {
     getSupportButton: 'Hilfe erhalten',
     familiesSupported: 'Familien unterstützt',
     foundedGermany: 'Gegründet in Deutschland',
-    volunteers: 'Ehrenamtliche'
+    volunteers: 'Ehrenamtliche', volunteers: 'Ehrenamtliche',
+navPrograms: 'Programme',
+navEvents: 'Veranstaltungen',
+navAbout: 'Über uns',
+navMembership: 'Mitgliedschaft',
+navContact: 'Kontakt',
+navDonate: 'Spenden'
   },
   SO: {
     heroEyebrow: 'Soo dhawow · Willkommen · Welcome',
@@ -1904,7 +1916,13 @@ const translations = {
     getSupportButton: 'Hel taageero',
     familiesSupported: 'Dadka la caawiyay',
     foundedGermany: 'Laga aasaasay',
-    volunteers: 'Caawiye-yaal'
+    volunteers: 'Caawiye-yaal', volunteers: 'Mutadawiciin',
+navPrograms: 'Barnaamijyo',
+navEvents: 'Dhacdooyin',
+navAbout: 'Nagu saabsan',
+navMembership: 'Xubinimo',
+navContact: 'Xiriir',
+navDonate: 'Taageer'
   }
 };
 
