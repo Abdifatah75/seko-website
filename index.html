@@ -1396,56 +1396,70 @@
     <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
          2. ABOUT
     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-    <section class="section" id="about" aria-labelledby="about-title">
-      <div class="container">
-        <div class="about-grid">
+  <section class="section" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-grid">
 
-          <div class="photo-slot about-photo reveal  photo-img-2" role="img" aria-label="About SeKO photo placeholder">
-            <i class="ph ph-buildings"></i>
-            <span>Our office in Worms</span>
+      <div class="photo-slot about-photo reveal photo-img-2" role="img" aria-label="About SeKO photo placeholder">
+        <i class="ph ph-buildings"></i>
+        <span data-i18n="aboutPhotoText">Our office in Worms</span>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <span class="eyebrow" data-i18n="aboutEyebrow">About SeKO</span>
+        <h2 class="section-title" id="about-title" data-i18n="aboutTitle">A bridge between two homes</h2>
+
+        <p class="section-lead" data-i18n="aboutLead">
+          Somalische Europäische Kooperation e.V. (SeKO) was founded in Worms, Germany to
+          support Somali families and individuals in building a stable, dignified life — while
+          staying connected to their culture and heritage.
+        </p>
+
+        <p style="margin-top:1rem;line-height:1.7;color:var(--text-body);font-size:.95rem;" data-i18n="aboutText">
+          We work with families at every stage: from their first days in Germany through to
+          education, employment, and full community participation. We are a registered
+          non-profit (eingetragener Verein) and are independent, transparent, and
+          accountable to the communities we serve.
+        </p>
+
+        <div class="about-badges">
+          <span class="badge">
+            <i class="ph ph-check-circle"></i>
+            <span data-i18n="aboutBadge1">Registered e.V.</span>
+          </span>
+          <span class="badge">
+            <i class="ph ph-check-circle"></i>
+            <span data-i18n="aboutBadge2">Since 2014</span>
+          </span>
+          <span class="badge">
+            <i class="ph ph-check-circle"></i>
+            <span data-i18n="aboutBadge3">Based in Worms</span>
+          </span>
+          <span class="badge badge--accent">
+            <i class="ph ph-globe"></i>
+            <span>SO · DE · EN · AR</span>
+          </span>
+        </div>
+
+        <div class="about-contact">
+          <div class="about-contact-row">
+            <i class="ph ph-map-pin"></i>
+            <span>Lutherring 21, 67547 Worms, Germany</span>
           </div>
-
-          <div class="reveal reveal-delay-1">
-            <span class="eyebrow">About SeKO</span>
-            <h2 class="section-title" id="about-title">A bridge between two homes</h2>
-            <p class="section-lead">
-              Somalische Europäische Kooperation e.V. (SeKO) was founded in Worms, Germany to
-              support Somali families and individuals in building a stable, dignified life — while
-              staying connected to their culture and heritage.
-            </p>
-            <p style="margin-top:1rem;line-height:1.7;color:var(--text-body);font-size:.95rem;">
-              We work with families at every stage: from their first days in Germany through to
-              education, employment, and full community participation. We are a registered
-              non-profit (<em>eingetragener Verein</em>) and are independent, transparent, and
-              accountable to the communities we serve.
-            </p>
-
-            <div class="about-badges">
-              <span class="badge"><i class="ph ph-check-circle"></i> Registered e.V.</span>
-              <span class="badge"><i class="ph ph-check-circle"></i> Since 2014</span>
-              <span class="badge"><i class="ph ph-check-circle"></i> Based in Worms</span>
-              <span class="badge badge--accent"><i class="ph ph-globe"></i> SO · DE · EN · AR</span>
-            </div>
-
-            <div class="about-contact">
-              <div class="about-contact-row">
-                <i class="ph ph-map-pin"></i>
-                <span>Lutherring 21, 67547 Worms, Germany</span>
-              </div>
-              <div class="about-contact-row">
-                <i class="ph ph-phone"></i>
-                <span>06241 2113562 &nbsp;·&nbsp; 0176 80453355</span>
-              </div>
-              <div class="about-contact-row">
-                <i class="ph ph-globe"></i>
-                <a href="https://sekoorg.com" target="_blank" rel="noopener">sekoorg.com</a>
-              </div>
-            </div>
+          <div class="about-contact-row">
+            <i class="ph ph-phone"></i>
+            <span>06241 2113562 &nbsp;·&nbsp; 0176 80453355</span>
           </div>
-
+          <div class="about-contact-row">
+            <i class="ph ph-globe"></i>
+            <a href="https://sekoorg.com" target="_blank" rel="noopener">sekoorg.com</a>
+          </div>
         </div>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
 
     <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
          3. MISSION & VISION
@@ -1944,6 +1958,14 @@ event2Badge: 'Community',
 event3Title: 'Legal advice clinic',
 event3Time: 'Sat 10:00 · Worms',
 event3Badge: 'Registration required',
+aboutPhotoText: 'Our office in Worms',
+aboutEyebrow: 'About SeKO',
+aboutTitle: 'A bridge between two homes',
+aboutLead: 'Somalische Europäische Kooperation e.V. (SeKO) was founded in Worms, Germany to support Somali families and individuals in building a stable, dignified life — while staying connected to their culture and heritage.',
+aboutText: 'We work with families at every stage: from their first days in Germany through to education, employment, and full community participation. We are a registered non-profit (eingetragener Verein) and are independent, transparent, and accountable to the communities we serve.',
+aboutBadge1: 'Registered e.V.',
+aboutBadge2: 'Since 2014',
+aboutBadge3: 'Based in Worms',
   },
   DE: {
     heroEyebrow: 'Willkommen · Welcome · Soo dhawow',
@@ -1987,6 +2009,14 @@ event2Badge: 'Gemeinschaft',
 event3Title: 'Rechtsberatung',
 event3Time: 'Sa. 10:00 · Worms',
 event3Badge: 'Anmeldung erforderlich',
+aboutPhotoText: 'Unser Büro in Worms',
+aboutEyebrow: 'Über SeKO',
+aboutTitle: 'Eine Brücke zwischen zwei Welten',
+aboutLead: 'Die Somalische Europäische Kooperation e.V. (SeKO) wurde in Worms gegründet, um somalischen Familien und Einzelpersonen dabei zu helfen, ein stabiles, würdevolles Leben aufzubauen — und gleichzeitig ihre Kultur und ihr Erbe zu bewahren.',
+aboutText: 'Wir begleiten Familien in jeder Phase: von den ersten Tagen in Deutschland bis hin zu Bildung, Beschäftigung und gesellschaftlicher Teilhabe. Wir sind ein eingetragener gemeinnütziger Verein, unabhängig, transparent und rechenschaftspflichtig gegenüber den Gemeinschaften, denen wir dienen.',
+aboutBadge1: 'Eingetragener Verein',
+aboutBadge2: 'Seit 2014',
+aboutBadge3: 'In Worms ansässig',
   },
   SO: {
     heroEyebrow: 'Soo dhawow · Willkommen · Welcome',
@@ -2030,6 +2060,15 @@ event2Badge: 'Bulsho',
 event3Title: 'Latalin Sharci',
 event3Time: 'Sabti 10:00 · Worms',
 event3Badge: 'Isdiiwaangelin ayaa loo baahan yahay',
+aboutPhotoText: 'Xafiiskayaga Worms',
+aboutEyebrow: 'Nagu saabsan SeKO',
+aboutTitle: 'Buundo ka dhexeysa laba guri',
+aboutLead: 'Somalische Europäische Kooperation e.V. (SeKO) waxay ka aasaasnaatay Baahida Dadka Soomaliyee ku nool guud ahaan Wadan Jarmalka gaar ahaan Worms iyo hareeraheeda, si Dadka Soomaliyeed ay u helaan Nolol degen si ay ula qabsadaan Nolosha Jarmalka, iyo in Dhaqankooda iyo Diintooda ay u ilaaliso.', 
+
+aboutText: 'Waxaan la shaqeynaa qoysaska marxalad walba: laga bilaabo maalintii ugu horreysay ee Jarmalka ilaa waxbarashada, shaqada, iyo ka qeybgalka bulshada. Waxaan nahay Urur aan faa\'iido doon ahayn, madax-bannaan, si hufana ugu adeega Bulshadeena Soomaaliyeed.',
+aboutBadge1: 'Ururka Diiwaan-gashan',
+aboutBadge2: 'Tan iyo 2014',
+aboutBadge3: 'Ku salaysan Worms',
   }
 };
 
