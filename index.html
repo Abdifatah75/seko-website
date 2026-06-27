@@ -1647,30 +1647,26 @@
 
           <div class="donate-grid">
             <div>
-              <span class="eyebrow eyebrow--light">Support our work</span>
-              <h2 id="donate-title">Help us reach more families</h2>
-              <p>
-                €50 funds a week of childcare so a parent can attend their German course.
-                €100 provides legal consultation for a family in need. Every gift makes
-                a direct difference.
-              </p>
+              <span class="eyebrow eyebrow--light" data-i18n="donateEyebrow">Support our work</span>
+              <h2 id="donate-title" data-i18n="donateTitle">Help us reach more families</h2>
+              <p data-i18n="donateText">€50 funds a week of childcare so a parent can attend their German course. €100 provides legal consultation for a family in need. Every gift makes a direct difference.</p>
               <button class="btn btn--accent btn--lg" onclick="openDonate()">
-                <i class="ph ph-hand-heart"></i> Donate now
+                <i class="ph ph-hand-heart"></i> <span data-i18n="donateButton">Donate now</span>
               </button>
             </div>
 
             <div class="donate-goal">
               <div class="donate-amounts" id="quickAmounts">
-                <button class="amt-btn" data-amt="25" onclick="selectAmt(this)">€25<small>one-time</small></button>
-                <button class="amt-btn active" data-amt="50" onclick="selectAmt(this)">€50<small>monthly</small></button>
-                <button class="amt-btn" data-amt="100" onclick="selectAmt(this)">€100<small>monthly</small></button>
+                <button class="amt-btn" data-amt="25" onclick="selectAmt(this)">€25<small data-i18n="donateOneTime">one-time</small></button>
+                <button class="amt-btn active" data-amt="50" onclick="selectAmt(this)">€50<small data-i18n="donateMonthly">monthly</small></button>
+                <button class="amt-btn" data-amt="100" onclick="selectAmt(this)">€100<small data-i18n="donateMonthly">monthly</small></button>
               </div>
               <div class="progress-track">
                 <div class="progress-fill" style="width:64%" id="progressFill"></div>
               </div>
               <div class="donate-goal-nums">
-                <span class="raised">€6,400 raised</span>
-                <span class="target">of €10,000 goal</span>
+                <span class="raised" data-i18n="donateRaised">€6,400 raised</span>
+                <span class="target" data-i18n="donateGoalLabel">of €10,000 goal</span>
               </div>
               <button class="btn btn--on-ink" style="width:100%;justify-content:center;margin-top:var(--space-4)" onclick="openDonate()">
                 Give €<span id="selectedAmt">50</span> now
@@ -1964,6 +1960,14 @@ mvMissionTitle: 'Our Mission',
 mvMissionText: 'To empower Somali families and individuals living in Germany with practical support, education, and advocacy — so that every person can participate fully and confidently in German society without losing their cultural identity.',
 mvVisionTitle: 'Our Vision',
 mvVisionText: 'A Germany where Somali communities are visible, valued, and self-determining — and where cultural heritage enriches rather than excludes. We believe cooperation between two worlds creates something stronger than either alone.',
+donateEyebrow: 'Support our work',
+donateTitle: 'Help us reach more families',
+donateText: '€50 funds a week of childcare so a parent can attend their German course. €100 provides legal consultation for a family in need. Every gift makes a direct difference.',
+donateButton: 'Donate now',
+donateOneTime: 'one-time',
+donateMonthly: 'monthly',
+donateRaised: '€6,400 raised',
+donateGoalLabel: 'of €10,000 goal',
   },
   DE: {
     heroEyebrow: 'Willkommen · Welcome · Soo dhawow',
@@ -2021,6 +2025,14 @@ mvMissionTitle: 'Unsere Mission',
 mvMissionText: 'Somalische Familien und Einzelpersonen in Deutschland zu stärken — mit praktischer Unterstützung, Bildung und Interessenvertretung — damit jeder Mensch vollständig und selbstbewusst am gesellschaftlichen Leben teilnehmen kann, ohne seine kulturelle Identität zu verlieren.',
 mvVisionTitle: 'Unsere Vision',
 mvVisionText: 'Ein Deutschland, in dem somalische Gemeinschaften sichtbar, geschätzt und selbstbestimmt sind — und in dem kulturelles Erbe bereichert statt ausschließt. Wir glauben, dass die Zusammenarbeit zweier Welten etwas Stärkeres schafft als jede für sich allein.',
+donateEyebrow: 'Unsere Arbeit unterstützen',
+donateTitle: 'Helfen Sie uns, mehr Familien zu erreichen',
+donateText: '€50 finanziert eine Woche Kinderbetreuung, damit ein Elternteil am Deutschkurs teilnehmen kann. €100 ermöglicht eine Rechtsberatung für eine bedürftige Familie. Jede Spende macht einen direkten Unterschied.',
+donateButton: 'Jetzt spenden',
+donateOneTime: 'einmalig',
+donateMonthly: 'monatlich',
+donateRaised: '€6.400 gesammelt',
+donateGoalLabel: 'von €10.000 Ziel',
   },
   SO: {
     heroEyebrow: 'Soo dhawow · Willkommen · Welcome',
@@ -2079,6 +2091,14 @@ mvMissionTitle: 'Hadafkayaga',
 mvMissionText: 'In aan xoojinno qoysaska iyo shakhsiyaadka Soomaaliyeed ee ku nool Jarmalka — taageerada wax ku oolka ah, waxbarashada, iyo u-doodeynta — si qof kasta uu si buuxda oo kalsooni leh ugu qeybgeli karo bulshada Jarmalka isagoo haysta aqoontiisa dhaqanka.',
 mvVisionTitle: 'Muradkayaga',
 mvVisionText: 'Jarmal ay ku muuqdaan, laguna qiimeeyo, oo is-go\'aan leh bulshada Soomaaliyeed — halka dhaxalka dhaqanka uu hodmeeyo halkii uu ka meelayn lahaa. Waxaan aaminsan nahay in iskaashiga laba adduun oo kala duwan ay wax ka adag labadoodaba abuurto.',
+donateEyebrow: 'Taageer shaqadayada',
+donateTitle: 'Naga caawo inaan gaarno qoysas badan',
+donateText: '€50 waxay maalgalinaysaa toddobaad daryeel ilmo ah si waalid uu u tago koorsada Jarmalka. €100 waxay bixisaa talo sharci oo qoys u baahan. Hadiyad kasta waxay saameyn toos ah leedahay.',
+donateButton: 'Hadda bixi',
+donateOneTime: 'hal mar',
+donateMonthly: 'bishiiba',
+donateRaised: '€6,400 la ururiyay',
+donateGoalLabel: 'ka mid ah €10,000 bartilmaameedka',
   }
 };
 
