@@ -1686,18 +1686,15 @@
 
           <div class="contact-info reveal">
             <div>
-              <span class="eyebrow">Get in touch</span>
-              <h2 class="section-title" id="contact-title">We're here for you</h2>
-              <p class="section-lead">
-                Have a question? Need support? Want to volunteer or partner with us?
-                Reach out — we respond in Somali, German, English, and Arabic.
-              </p>
+              <span class="eyebrow" data-i18n="contactEyebrow">Get in touch</span>
+              <h2 class="section-title" id="contact-title" data-i18n="contactTitle">We're here for you</h2>
+              <p class="section-lead" data-i18n="contactLead">Have a question? Need support? Want to volunteer or partner with us? Reach out — we respond in Somali, German, English, and Arabic.</p>
             </div>
 
             <div class="contact-row">
               <div class="contact-icon"><i class="ph ph-map-pin"></i></div>
               <div>
-                <h4>Our office</h4>
+                <h4 data-i18n="contactOfficeLabel">Our office</h4>
                 <p>Lutherring 21<br>67547 Worms, Germany</p>
               </div>
             </div>
@@ -1705,7 +1702,7 @@
             <div class="contact-row">
               <div class="contact-icon"><i class="ph ph-phone"></i></div>
               <div>
-                <h4>Phone</h4>
+                <h4 data-i18n="contactPhoneLabel">Phone</h4>
                 <a href="tel:+4962412113562">06241 2113562</a><br>
                 <a href="tel:+4917680453355">0176 80453355</a>
               </div>
@@ -1714,7 +1711,7 @@
             <div class="contact-row">
               <div class="contact-icon"><i class="ph ph-envelope"></i></div>
               <div>
-                <h4>Email</h4>
+                <h4 data-i18n="contactEmailLabel">Email</h4>
                 <a href="mailto:info@sekoorg.com">info@sekoorg.com</a>
               </div>
             </div>
@@ -1722,31 +1719,31 @@
             <div class="contact-row">
               <div class="contact-icon"><i class="ph ph-clock"></i></div>
               <div>
-                <h4>Opening hours</h4>
+                <h4 data-i18n="contactHoursLabel">Opening hours</h4>
                 <p>Mon–Fri 9:00–17:00<br>Sat 10:00–14:00</p>
               </div>
             </div>
           </div>
 
           <div class="card contact-form-card reveal reveal-delay-1">
-            <h3 style="font-size:1.15rem;margin-bottom:var(--space-5)">Send us a message</h3>
+            <h3 style="font-size:1.15rem;margin-bottom:var(--space-5)" data-i18n="contactFormTitle">Send us a message</h3>
             <form class="contact-form" id="contactForm" novalidate onsubmit="handleContactSubmit(event)">
               <div class="form-row">
                 <div class="field">
-                  <label for="fname">First name</label>
+                  <label for="fname" data-i18n="contactFirstName">First name</label>
                   <input type="text" id="fname" name="fname" placeholder="Amina" required autocomplete="given-name" />
                 </div>
                 <div class="field">
-                  <label for="lname">Last name</label>
+                  <label for="lname" data-i18n="contactLastName">Last name</label>
                   <input type="text" id="lname" name="lname" placeholder="Mohamed" required autocomplete="family-name" />
                 </div>
               </div>
               <div class="field">
-                <label for="email">Email</label>
+                <label for="email" data-i18n="contactEmailField">Email</label>
                 <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
               </div>
               <div class="field">
-                <label for="subject">Subject</label>
+                <label for="subject" data-i18n="contactSubject">Subject</label>
                 <select id="subject" name="subject">
                   <option value="">Select a topic…</option>
                   <option>Integration support</option>
@@ -1759,11 +1756,11 @@
                 </select>
               </div>
               <div class="field">
-                <label for="message">Message</label>
+                <label for="message" data-i18n="contactMessage">Message</label>
                 <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
               </div>
               <button type="submit" class="btn btn--primary" style="align-self:flex-start">
-                <i class="ph ph-paper-plane-tilt"></i> Send message
+                <i class="ph ph-paper-plane-tilt"></i> <span data-i18n="contactSendButton">Send message</span>
               </button>
             </form>
           </div>
@@ -1968,6 +1965,20 @@ donateOneTime: 'one-time',
 donateMonthly: 'monthly',
 donateRaised: '€6,400 raised',
 donateGoalLabel: 'of €10,000 goal',
+contactEyebrow: 'Get in touch',
+contactTitle: 'We\'re here for you',
+contactLead: 'Have a question? Need support? Want to volunteer or partner with us? Reach out — we respond in Somali, German, English, and Arabic.',
+contactOfficeLabel: 'Our office',
+contactPhoneLabel: 'Phone',
+contactEmailLabel: 'Email',
+contactHoursLabel: 'Opening hours',
+contactFormTitle: 'Send us a message',
+contactFirstName: 'First name',
+contactLastName: 'Last name',
+contactEmailField: 'Email',
+contactSubject: 'Subject',
+contactMessage: 'Message',
+contactSendButton: 'Send message',
   },
   DE: {
     heroEyebrow: 'Willkommen · Welcome · Soo dhawow',
@@ -2033,6 +2044,20 @@ donateOneTime: 'einmalig',
 donateMonthly: 'monatlich',
 donateRaised: '€6.400 gesammelt',
 donateGoalLabel: 'von €10.000 Ziel',
+contactEyebrow: 'Kontakt aufnehmen',
+contactTitle: 'Wir sind für Sie da',
+contactLead: 'Haben Sie eine Frage? Benötigen Sie Unterstützung? Möchten Sie ehrenamtlich tätig sein oder mit uns kooperieren? Melden Sie sich — wir antworten auf Somali, Deutsch, Englisch und Arabisch.',
+contactOfficeLabel: 'Unser Büro',
+contactPhoneLabel: 'Telefon',
+contactEmailLabel: 'E-Mail',
+contactHoursLabel: 'Öffnungszeiten',
+contactFormTitle: 'Nachricht senden',
+contactFirstName: 'Vorname',
+contactLastName: 'Nachname',
+contactEmailField: 'E-Mail',
+contactSubject: 'Betreff',
+contactMessage: 'Nachricht',
+contactSendButton: 'Nachricht absenden',
   },
   SO: {
     heroEyebrow: 'Soo dhawow · Willkommen · Welcome',
@@ -2099,6 +2124,20 @@ donateOneTime: 'hal mar',
 donateMonthly: 'bishiiba',
 donateRaised: '€6,400 la ururiyay',
 donateGoalLabel: 'ka mid ah €10,000 bartilmaameedka',
+contactEyebrow: 'Nala xiriir',
+contactTitle: 'Waxaan halkan u joognaa',
+contactLead: 'Su\'aal ma qabtaa? Taageero ma u baahantahay? Miyaad rabta inaad ka shaqaynto ama nala iskaashato? Nala soo xiriir — waxaan ku jawaabi doonnaa Soomaali, Jarmal, Ingiriisi iyo Carabi.',
+contactOfficeLabel: 'Xafiiskayaga',
+contactPhoneLabel: 'Telefon',
+contactEmailLabel: 'Iimeel',
+contactHoursLabel: 'Saacadaha furitaanka',
+contactFormTitle: 'Noo dir farriin',
+contactFirstName: 'Magaca hore',
+contactLastName: 'Magaca dambe',
+contactEmailField: 'Iimeel',
+contactSubject: 'Cinwaanka',
+contactMessage: 'Farriin',
+contactSendButton: 'Dir farriin',
   }
 };
 
