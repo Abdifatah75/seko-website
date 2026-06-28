@@ -633,6 +633,9 @@
 
     <div class="nav-actions">
       <a class="nav-link" href="index.html">Startseite</a>
+      <button class="nav-link" type="button" data-language-button data-language="so" aria-pressed="false">SO</button>
+      <button class="nav-link" type="button" data-language-button data-language="en" aria-pressed="false">EN</button>
+      <button class="nav-link" type="button" data-language-button data-language="de" aria-pressed="true">DE</button>
       <a class="nav-link" href="index.html#contact">Kontakt</a>
     </div>
   </nav>
@@ -812,6 +815,59 @@
   </footer>
 
   <script>
+    const membershipHeroTranslations = {
+      de: {
+        membershipHeroBadge: "Mitgliedschaft & Unterstützung",
+        membershipHeroTitle: "Mitglied werden oder Unterstützung anfragen",
+        membershipHeroLead: "SEKO e.V. unterstützt Menschen und Familien durch Beratung, Orientierung, Bildung, Gemeinschaft und soziale Teilhabe. Über dieses Formular können Sie Ihr Interesse an einer Mitgliedschaft, ehrenamtlicher Mitarbeit oder Unterstützung mitteilen.",
+        membershipHeroPoint1: "Einfach Kontakt aufnehmen und Ihr Anliegen beschreiben.",
+        membershipHeroPoint2: "Geeignet für Mitgliedschaft, Ehrenamt, Beratung und allgemeine Anfragen.",
+        membershipHeroPoint3: "Ihre Anfrage wird per E-Mail vorbereitet und nicht automatisch in einer Datenbank gespeichert."
+      },
+      en: {
+        membershipHeroBadge: "Membership & Support",
+        membershipHeroTitle: "Become a member or request support",
+        membershipHeroLead: "SEKO e.V. supports people and families through advice, guidance, education, community and social participation. Use this form to share your interest in membership, volunteering or support.",
+        membershipHeroPoint1: "Get in touch easily and describe your request.",
+        membershipHeroPoint2: "Suitable for membership, volunteering, advice and general inquiries.",
+        membershipHeroPoint3: "Your request is prepared as an email and is not automatically stored in a database."
+      },
+      so: {
+        membershipHeroBadge: "Xubinnimo & Taageero",
+        membershipHeroTitle: "Noqo xubin ama codso taageero",
+        membershipHeroLead: "SEKO e.V. waxay dadka iyo qoysaska ku taageertaa talo-bixin, hagid, waxbarasho, bulsho iyo ka-qaybgal bulsho. Foomkan waxaad ku sheegi kartaa xiisahaaga xubinnimo, shaqo tabaruc ah ama taageero.",
+        membershipHeroPoint1: "Si fudud nala soo xiriir oo sharax codsigaaga.",
+        membershipHeroPoint2: "Waxay ku habboon tahay xubinnimo, tabaruc, talo-bixin iyo su'aalo guud.",
+        membershipHeroPoint3: "Codsigaaga waxaa loo diyaariyaa email ahaan, si toos ahna looguma kaydiyo database."
+      }
+    };
+
+    function applyLanguage(language = "de") {
+      const activeLanguage = membershipHeroTranslations[language] ? language : "de";
+      const translations = membershipHeroTranslations[activeLanguage];
+
+      document.querySelectorAll("[data-i18n]").forEach(function (element) {
+        const key = element.getAttribute("data-i18n");
+
+        if (Object.prototype.hasOwnProperty.call(translations, key)) {
+          element.textContent = translations[key];
+        }
+      });
+
+      document.querySelectorAll("[data-language-button]").forEach(function (button) {
+        button.setAttribute("aria-pressed", String(button.getAttribute("data-language") === activeLanguage));
+      });
+    }
+
+    document.querySelectorAll("[data-language-button]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        applyLanguage(button.getAttribute("data-language"));
+      });
+    });
+
+    window.applyLanguage = applyLanguage;
+    applyLanguage("de");
+
     const form = document.getElementById("memberForm");
     const errorBox = document.getElementById("formError");
     const successNotice = document.getElementById("successNotice");
