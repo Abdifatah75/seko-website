@@ -729,31 +729,31 @@
         <form id="memberForm">
           <div class="form-row">
             <div class="form-group">
-              <label for="vorname">Vorname <span class="req">*</span></label>
-              <input type="text" id="vorname" name="vorname" autocomplete="given-name" required placeholder="Ihr Vorname" />
+              <label for="vorname"><span data-i18n="membershipFieldFirstName">Vorname</span> <span class="req">*</span></label>
+              <input type="text" id="vorname" name="vorname" autocomplete="given-name" required placeholder="Ihr Vorname" data-i18n-placeholder="membershipFieldFirstNamePlaceholder" />
             </div>
 
             <div class="form-group">
-              <label for="nachname">Nachname <span class="req">*</span></label>
-              <input type="text" id="nachname" name="nachname" autocomplete="family-name" required placeholder="Ihr Nachname" />
+              <label for="nachname"><span data-i18n="membershipFieldLastName">Nachname</span> <span class="req">*</span></label>
+              <input type="text" id="nachname" name="nachname" autocomplete="family-name" required placeholder="Ihr Nachname" data-i18n-placeholder="membershipFieldLastNamePlaceholder" />
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="email">E-Mail <span class="req">*</span></label>
-              <input type="email" id="email" name="email" autocomplete="email" required placeholder="name@email.de" />
+              <label for="email"><span data-i18n="membershipFieldEmail">E-Mail</span> <span class="req">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required placeholder="name@email.de" data-i18n-placeholder="membershipFieldEmailPlaceholder" />
             </div>
 
             <div class="form-group">
-              <label for="telefon">Telefon</label>
-              <input type="tel" id="telefon" name="telefon" autocomplete="tel" placeholder="0176 12345678" />
+              <label for="telefon"><span data-i18n="membershipFieldPhone">Telefon</span></label>
+              <input type="tel" id="telefon" name="telefon" autocomplete="tel" placeholder="0176 12345678" data-i18n-placeholder="membershipFieldPhonePlaceholder" />
             </div>
           </div>
 
           <div class="form-group">
-            <label for="ort">Stadt / Ort</label>
-            <input type="text" id="ort" name="ort" autocomplete="address-level2" placeholder="z. B. Worms, Mannheim, Bensheim" />
+            <label for="ort"><span data-i18n="membershipFieldCity">Stadt / Ort</span></label>
+            <input type="text" id="ort" name="ort" autocomplete="address-level2" placeholder="z. B. Worms, Mannheim, Bensheim" data-i18n-placeholder="membershipFieldCityPlaceholder" />
           </div>
 
           <div class="form-group">
@@ -783,9 +783,9 @@
           </div>
 
           <div class="form-group">
-            <label for="nachricht">Nachricht <span class="req">*</span></label>
-            <textarea id="nachricht" name="nachricht" required placeholder="Beschreiben Sie kurz Ihr Anliegen oder wie Sie SEKO unterstützen möchten."></textarea>
-            <div class="hint">Bitte keine besonders sensiblen Informationen eintragen.</div>
+            <label for="nachricht"><span data-i18n="membershipFieldMessage">Nachricht</span> <span class="req">*</span></label>
+            <textarea id="nachricht" name="nachricht" required placeholder="Beschreiben Sie kurz Ihr Anliegen oder wie Sie SEKO unterstützen möchten." data-i18n-placeholder="membershipFieldMessagePlaceholder"></textarea>
+            <div class="hint" data-i18n="membershipFieldMessageHint">Bitte keine besonders sensiblen Informationen eintragen.</div>
           </div>
 
           <label class="privacy-box" for="datenschutz">
@@ -838,7 +838,20 @@
         membershipSideSupport6: "Ehrenamtliche Mitarbeit und Projektunterstützung",
         membershipSideContactTitle: "Direkter Kontakt",
         membershipFormTitle: "Anfrage senden",
-        membershipFormIntro: "Füllen Sie die wichtigsten Angaben aus. Beim Absenden öffnet sich Ihr E-Mail-Programm mit einer vorbereiteten Nachricht an SEKO e.V."
+        membershipFormIntro: "Füllen Sie die wichtigsten Angaben aus. Beim Absenden öffnet sich Ihr E-Mail-Programm mit einer vorbereiteten Nachricht an SEKO e.V.",
+        membershipFieldFirstName: "Vorname",
+        membershipFieldFirstNamePlaceholder: "Ihr Vorname",
+        membershipFieldLastName: "Nachname",
+        membershipFieldLastNamePlaceholder: "Ihr Nachname",
+        membershipFieldEmail: "E-Mail",
+        membershipFieldEmailPlaceholder: "name@email.de",
+        membershipFieldPhone: "Telefon",
+        membershipFieldPhonePlaceholder: "0176 12345678",
+        membershipFieldCity: "Stadt / Ort",
+        membershipFieldCityPlaceholder: "z. B. Worms, Mannheim, Bensheim",
+        membershipFieldMessage: "Nachricht",
+        membershipFieldMessagePlaceholder: "Beschreiben Sie kurz Ihr Anliegen oder wie Sie SEKO unterstützen möchten.",
+        membershipFieldMessageHint: "Bitte keine besonders sensiblen Informationen eintragen."
       },
       en: {
         membershipHeroBadge: "Membership & Support",
@@ -862,7 +875,20 @@
         membershipSideSupport6: "Volunteering and project support",
         membershipSideContactTitle: "Direct contact",
         membershipFormTitle: "Send request",
-        membershipFormIntro: "Fill in the most important details. When you submit the form, your email program opens with a prepared message to SEKO e.V."
+        membershipFormIntro: "Fill in the most important details. When you submit the form, your email program opens with a prepared message to SEKO e.V.",
+        membershipFieldFirstName: "First name",
+        membershipFieldFirstNamePlaceholder: "Your first name",
+        membershipFieldLastName: "Last name",
+        membershipFieldLastNamePlaceholder: "Your last name",
+        membershipFieldEmail: "Email",
+        membershipFieldEmailPlaceholder: "name@email.com",
+        membershipFieldPhone: "Phone",
+        membershipFieldPhonePlaceholder: "0176 12345678",
+        membershipFieldCity: "City / Town",
+        membershipFieldCityPlaceholder: "e.g. Worms, Mannheim, Bensheim",
+        membershipFieldMessage: "Message",
+        membershipFieldMessagePlaceholder: "Briefly describe your request or how you would like to support SEKO.",
+        membershipFieldMessageHint: "Please do not enter especially sensitive information."
       },
       so: {
         membershipHeroBadge: "Xubinnimo & Taageero",
@@ -886,7 +912,20 @@
         membershipSideSupport6: "Shaqo tabaruc ah iyo taageero mashruuc",
         membershipSideContactTitle: "Xiriir toos ah",
         membershipFormTitle: "Dir codsi",
-        membershipFormIntro: "Buuxi xogta ugu muhiimsan. Marka aad dirto foomka, barnaamijka email-kaaga ayaa furaya fariin loo diyaariyay SEKO e.V."
+        membershipFormIntro: "Buuxi xogta ugu muhiimsan. Marka aad dirto foomka, barnaamijka email-kaaga ayaa furaya fariin loo diyaariyay SEKO e.V.",
+        membershipFieldFirstName: "Magaca hore",
+        membershipFieldFirstNamePlaceholder: "Magacaaga hore",
+        membershipFieldLastName: "Magaca dambe",
+        membershipFieldLastNamePlaceholder: "Magacaaga dambe",
+        membershipFieldEmail: "E-Mail",
+        membershipFieldEmailPlaceholder: "name@email.com",
+        membershipFieldPhone: "Telefoon",
+        membershipFieldPhonePlaceholder: "0176 12345678",
+        membershipFieldCity: "Magaalo / Goob",
+        membershipFieldCityPlaceholder: "tusaale Worms, Mannheim, Bensheim",
+        membershipFieldMessage: "Fariin",
+        membershipFieldMessagePlaceholder: "Si kooban u sharax codsigaaga ama sida aad SEKO u taageeri rabto.",
+        membershipFieldMessageHint: "Fadlan ha gelin macluumaad aad u xasaasi ah."
       }
     };
 
@@ -899,6 +938,14 @@
 
         if (Object.prototype.hasOwnProperty.call(translations, key)) {
           element.textContent = translations[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(function (element) {
+        const key = element.getAttribute("data-i18n-placeholder");
+
+        if (Object.prototype.hasOwnProperty.call(translations, key)) {
+          element.setAttribute("placeholder", translations[key]);
         }
       });
 
