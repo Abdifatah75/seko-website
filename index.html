@@ -1315,9 +1315,8 @@
 
         <div class="lang-switcher" role="group" aria-label="Language">
           <button class="lang-btn" data-lang="SO">SO</button>
-          <button class="lang-btn active" data-lang="EN">EN</button>
-          <button class="lang-btn" data-lang="DE">DE</button>
-          <button class="lang-btn" data-lang="AR">AR</button>
+          <button class="lang-btn" data-lang="EN">EN</button>
+          <button class="lang-btn active" data-lang="DE">DE</button>
         </div>
 
       <a href="#donate" class="btn btn--accent btn--sm header-donate" onclick="openDonate()">
@@ -2191,7 +2190,7 @@ footerLinkPartner: 'Nala iskaasho',
 };
 
 function applyLanguage(lang) {
-  const selected = translations[lang] || translations.EN;
+  const selected = translations[lang] || translations.DE;
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
@@ -2214,6 +2213,7 @@ function applyLanguage(lang) {
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
 });
+applyLanguage('DE');
 
     /* â”€â”€ Donate modal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     const donateModal = document.getElementById('donateModal');
