@@ -2219,17 +2219,24 @@ applyLanguage('DE');
 
     /* â”€â”€ Donate modal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     const donateModal = document.getElementById('donateModal');
+    let donateModalOpener = null;
     function openDonate() {
+      donateModalOpener = document.activeElement;
       donateModal.classList.add('open');
       document.body.style.overflow = 'hidden';
       document.getElementById('donorEmail').focus();
     }
     function closeDonate() {
+      const wasOpen = donateModal.classList.contains('open');
       donateModal.classList.remove('open');
       document.body.style.overflow = '';
+
+      if (wasOpen && donateModalOpener) {
+        donateModalOpener.focus();
+      }
     }
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeDonate();
+      if (e.key === 'Escape' && donateModal.classList.contains('open')) closeDonate();
     });
 
     /* â”€â”€ Amount selection (donate band) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
