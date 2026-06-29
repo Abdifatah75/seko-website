@@ -1314,9 +1314,9 @@
         </nav>
 
         <div class="lang-switcher" role="group" aria-label="Language">
-          <button class="lang-btn" data-lang="SO">SO</button>
-          <button class="lang-btn" data-lang="EN">EN</button>
-          <button class="lang-btn active" data-lang="DE">DE</button>
+          <button class="lang-btn" data-lang="SO" aria-pressed="false">SO</button>
+          <button class="lang-btn" data-lang="EN" aria-pressed="false">EN</button>
+          <button class="lang-btn active" data-lang="DE" aria-pressed="true">DE</button>
         </div>
 
       <a href="#donate" class="btn btn--accent btn--sm header-donate" onclick="openDonate()">
@@ -2206,7 +2206,9 @@ function applyLanguage(lang) {
   document.documentElement.dir = 'ltr';
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
+    const isActive = btn.dataset.lang === lang;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', String(isActive));
   });
 }
 
