@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdifatah75.github.io/seko-website/sitemap.xml
